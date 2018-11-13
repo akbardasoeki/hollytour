@@ -129,7 +129,7 @@ endif;
 
         <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="email" id="email" placeholder="enter your email" required="">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required="">
               <div class="invalid-feedback">
                   Please enter a valid email address.
               </div>
@@ -137,7 +137,7 @@ endif;
 
         <div class="mb-3">
           <label for="address">Address</label>
-          <input type="text" class="form-control" name="address" id="address" placeholder="enter your address" required="">
+          <input type="text" class="form-control" name="address" id="address" placeholder="Enter your address" required="">
           <div class="invalid-feedback">
             Please enter your address.
           </div>

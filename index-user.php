@@ -58,7 +58,7 @@ if( isset($_SESSION['user_id']) ){
                 <a class="nav-link" href="galeri-user.html">Gallery</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile.html">Profile</a>
+                <a class="nav-link" href="profile.php">Profile</a>
             </li>
           </ul>
           <li class="form-inline mt-2 mt-md-0">
