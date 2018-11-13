@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+require 'conn.php';
+
+if( isset($_SESSION['user_id']) ){
+
+	$records = $conn->prepare('SELECT id,email,password FROM user WHERE id = :id');
+	$records->bindParam(':id', $_SESSION['user_id']);
+	$records->execute();
+	$results = $records->fetch(PDO::FETCH_ASSOC);
+
+	$user = NULL;
+
+	if( count($results) > 0){
+		$user = $results;
+	}
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -24,17 +46,23 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index-user.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index-user.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="about-user.html">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="paket-user.html">Packages</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="galeri-user.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+            </li>
           </ul>
           <li class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-outline-success my-2 my-sm-0" href="index.html">Sign Out</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Sign Out</a>
           </li>
         </div>
       </nav>

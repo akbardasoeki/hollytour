@@ -1,3 +1,38 @@
+<?php
+
+session_start();
+
+if( isset($_SESSION['user_id']) ){
+	header("Location: /");
+}
+
+require 'conn.php';
+
+$message = '';
+
+if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['email'])):
+	
+	// Enter the new user in the database
+	$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password)";
+	$stmt = $conn->prepare($sql);
+
+  $stmt->bindParam(':name', $_POST['name']);
+  $stmt->bindParam(':username', $_POST['username']);
+  $stmt->bindParam(':no_telp', $_POST['no_telp']);
+  $stmt->bindParam(':jns_kelamin', $_POST['jns_kelamin']);
+  $stmt->bindParam(':email', $_POST['email']);
+  $stmt->bindParam(':address', $_POST['address']);
+	$stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
+
+	if( $stmt->execute() ):
+		echo "<script type='text/javascript'>alert('Successfully created new user')</script>";
+	else:
+		echo "<script type='text/javascript'>alert('Sorry there must have been an issue creating your account')</script>";
+	endif;
+
+endif;
+
+?>
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -16,6 +51,7 @@
   </head>
 
   <header>
+
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,7 +59,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About Us</a>
@@ -35,38 +71,38 @@
               <a class="nav-link" href="galeri.html">Gallery</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="daftar.html">Sign Up <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="daftar.php">Sign Up <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <li class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-outline-success my-2 my-sm-0" href="login.html">Sign In</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Sign In</a>
           </li>
         </div>
       </nav>
     </header>
 
   <body class="bg-light">
+  
 
     <div class="container">
       <div class="py-5 text-center">
         <h2 style="margin-top :3%; margin-bottom: -2%">Please Sign Up</h2>
       </div>
-      
+      <form action="daftar.php" method="POST">
           <div class="mb-3">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="" value="" required="">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required="">
             <div class="invalid-feedback">
               Valid name is required.
             </div>
           </div>
-
         <div class="mb-3">
           <label for="username">Username</label>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
             </div>
-            <input type="text" class="form-control" id="username" placeholder="Username" required="">
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username" required="">
             <div class="invalid-feedback" style="width: 100%;">
               Your username is required.
             </div>
@@ -75,7 +111,7 @@
 
         <div class="mb-3">
             <label for="telephone">Phone Number</label>
-            <input type="number" class="form-control" id="telephone" placeholder="08xxxxxxxxxx" required="">
+            <input type="text" class="form-control" id="telephone" name="no_telp" placeholder="08xxxxxxxxxx" required="">
             <div class="invalid-feedback">
               Please enter a valid phone number.
             </div>
@@ -83,8 +119,8 @@
 
         <div class="mb-3">
               <label for="Gender">Gender </label><br />
-              <input type="radio" name="jenis_kelamin2" value="Male"/>Male
-              <input type="radio" name="jenis_kelamin2" value="Female"/>Female
+              <input type="radio" name="jns_kelamin" value="Male"/>Male
+              <input type="radio" name="jns_kelamin" value="Female"/>Female
               <br />
               <div class="invalid-feedback">
                 Please choose your gender.
@@ -93,7 +129,7 @@
 
         <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="enter your email" required="">
+              <input type="email" class="form-control" name="email" id="email" placeholder="enter your email" required="">
               <div class="invalid-feedback">
                   Please enter a valid email address.
               </div>
@@ -101,7 +137,7 @@
 
         <div class="mb-3">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="enter your address" required="">
+          <input type="text" class="form-control" name="address" id="address" placeholder="enter your address" required="">
           <div class="invalid-feedback">
             Please enter your address.
           </div>
@@ -110,7 +146,7 @@
         <div class="row">
             <div class="col-md-6 mb-3">
               <label for="Password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="" value="" required="">
+              <input type="password" class="form-control" name="password" id="password" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 Password is required.
               </div>

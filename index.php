@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+require 'conn.php';
+
+if( isset($_SESSION['user_id']) ){
+
+	$records = $conn->prepare('SELECT id,email,password FROM user WHERE id = :id');
+	$records->bindParam(':id', $_SESSION['user_id']);
+	$records->execute();
+	$results = $records->fetch(PDO::FETCH_ASSOC);
+
+	$user = NULL;
+
+	if( count($results) > 0){
+		$user = $results;
+	}
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About Us</a>
@@ -37,11 +59,11 @@
               <a class="nav-link" href="galeri.html">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="daftar.html">Sign Up</a>
+              <a class="nav-link" href="daftar.php">Sign Up</a>
             </li>
           </ul>
           <li class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-outline-success my-2 my-sm-0" href="login.html">Sign In</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Sign In</a>
           </li>
         </div>
       </nav>
