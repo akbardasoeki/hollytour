@@ -81,7 +81,7 @@ if( isset($_SESSION['user_id']) ){
       <form class="needs-validation" novalidate>
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Name</label>
+      <label for="validationTooltip01">Recipient Name</label>
       <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
 
     </div>
