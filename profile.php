@@ -64,13 +64,13 @@ if( !isset($_SESSION['user_id']) ){
           <a class="nav-link" href="index-user.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about-user.html">About Us</a>
+          <a class="nav-link" href="about-user.php">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="paket-user.html">Packages</a>
+          <a class="nav-link" href="paket-user.php">Packages</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="galeri-user.html">Gallery</a>
+          <a class="nav-link" href="galeri-user.php">Gallery</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="profile.php">Profile</a>
@@ -97,7 +97,7 @@ if( !isset($_SESSION['user_id']) ){
           <label for="name">Name</label>
           <input type="text" class="form-control" name="name" id="name" value="<?php echo $data['name'];  ?>">
         </div>
-        
+
       <div class="mb-3">
         <label for="username">Username</label>
         <div class="input-group">
