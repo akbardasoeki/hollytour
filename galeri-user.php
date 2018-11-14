@@ -1,3 +1,11 @@
+<?php
+require 'conn.php';
+session_start();
+
+if(!isset($_SESSION['user_id']) ){
+	header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
