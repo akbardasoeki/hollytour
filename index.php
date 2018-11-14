@@ -23,7 +23,7 @@ if( isset($_SESSION['user_id']) ){
 <!DOCTYPE html>
 <html lang="en">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -84,7 +84,7 @@ if( isset($_SESSION['user_id']) ){
               <div class="carousel-caption text-left">
                 <h1>WELCOME TO HOLLYTOUR</h1>
                 <p>We provide holiday packages that fit with your wallet!</p>
-                <p><a class="btn btn-lg btn-primary" href="daftar.html" role="button">Sign up today</a></p>
+                <p><a class="btn btn-lg btn-primary" href="daftar.php" role="button">Sign up today</a></p>
               </div>
             </div>
           </div>
@@ -201,6 +201,6 @@ if( isset($_SESSION['user_id']) ){
     <script src="assets/js/bootstrap.min.js.download"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="assets/js/holder.min.js.download"></script>
-  
+
 
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>
