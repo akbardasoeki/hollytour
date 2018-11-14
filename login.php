@@ -1,12 +1,10 @@
 <?php
-
+require 'conn.php';
 session_start();
 
 if( isset($_SESSION['user_id']) ){
 	header("Location: /");
 }
-
-require 'conn.php';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])):
 	

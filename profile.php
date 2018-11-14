@@ -1,7 +1,41 @@
+<?php
+
+require 'conn.php';
+session_start();
+
+if( !isset($_SESSION['user_id']) ){
+	header("Location: login.php");
+} else {
+  $query = "SELECT * FROM user where id='{$_SESSION['user_id']}'";
+  $result = $conn->query($query);
+  $data = $result->fetch(PDO::FETCH_ASSOC);
+  }
+
+  if(isset($_POST['username'])){
+    $name = $_POST['name'];
+    $username = $_POST['username'];
+    $no_telp = $_POST['no_telp'];
+    $jns_kelamin = $_POST['jns_kelamin'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+
+    $query = "UPDATE user set name='{$name}', username='{$username}', no_telp='{$no_telp}', jns_kelamin='{$jns_kelamin}', email='{$email}', address='{$address}' WHERE id='{$_SESSION['user_id']}'";
+    $result = $conn->prepare($query);
+    if($result->execute()){
+      echo "<script>alert('Update Berhasil')</script>";
+    } else {
+      echo "<script>alert('gagal')</script>";
+    }
+    $query = "SELECT * FROM user where id='{$_SESSION['user_id']}'";
+    $result = $conn->query($query);
+    $data = $result->fetch(PDO::FETCH_ASSOC);
+  }
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Edit</title>
     <link rel="stylesheet" type="text/css" href="">
      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -55,70 +89,57 @@
 
   	<hr>
 
-	<div class="row">
-      <!-- left column -->
-      <div class="col-md-4">
-        <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-          <h6>Upload a photo...</h6>
-          
-          <input type="file" class="form-control">
-        </div>
-      </div>
-      
+	<div class="" style="width:60% !important" >
+    <div></div>
       <!-- edit form column -->
-      <form action="daftar.php" method="POST">
-        <div class="mb-3">
+      <form action="profile.php" method="POST">
+        <div class="mb-3 ">
           <label for="name">Name</label>
-          <input type="text" class="form-control" name="name" id="name">
+          <input type="text" class="form-control" name="name" id="name" value="<?php echo $data['name'];  ?>">
         </div>
+        
       <div class="mb-3">
         <label for="username">Username</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">@</span>
           </div>
-          <input type="text" class="form-control" name="username" id="username">
+          <input type="text" class="form-control" name="username" id="username" value="<?php echo $data['username'];  ?>">
         </div>
       </div>
 
       <div class="mb-3">
           <label for="telephone">Phone Number</label>
-          <input type="text" class="form-control" id="telephone" name="no_telp">
+          <input type="text" class="form-control" id="telephone" name="no_telp" value="<?php echo $data['no_telp'];  ?>">
         </div>
 
       <div class="mb-3">
             <label for="Gender">Gender </label><br />
-            <input type="radio" name="jns_kelamin" value="Male"/>Male
-            <input type="radio" name="jns_kelamin" value="Female"/>Female
+            <input type="radio" name="jns_kelamin" value="Male" <?php if($data['jns_kelamin'] == 'Male'){ echo 'checked'; } ?>/>Male
+            <input type="radio" name="jns_kelamin" value="Female" <?php if($data['jns_kelamin'] == 'Female'){ echo 'checked'; } ?>/>Female
             <br />
           </div>
 
       <div class="mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email">
+            <input type="email" class="form-control" name="email" id="email" value="<?php echo $data['email'];  ?>">
       </div>
 
       <div class="mb-3">
         <label for="address">Address</label>
-        <input type="text" class="form-control" name="address" id="address">
+        <input type="text" class="form-control" name="address" id="address" value="<?php echo $data['address'];  ?>">
       </div>
 
       <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="Password">Password</label>
-            <input type="password" class="form-control" name="password" id="password" value="">
-          </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="reset" class="btn btn-default" value="Cancel">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+            <div class="col-md-12">
+              <button style="display:inline-block" type="submit" class="btn btn-primary">Save Changes</button>
               <span></span>
             </div>
           </div>
-        </form>
       </div>
+      </form>
   </div>
 </div>
 </body>
