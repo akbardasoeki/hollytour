@@ -26,13 +26,13 @@ if(!isset($_SESSION['user_id']) ){
                 <a class="nav-link" href="index-user.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about-user.html">About Us</a>
+                <a class="nav-link" href="about-user.php">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="paket-user.html">Packages</a>
+                <a class="nav-link" href="paket-user.php">Packages</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="galeri-user.html">Gallery <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="galeri-user.php">Gallery <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="profile.php">Profile</a>
@@ -168,7 +168,7 @@ if(!isset($_SESSION['user_id']) ){
       <div class="numbertext">3 / 33</div>
       <img src="image/galeri/lombok/5.jpg" style="width:100%">
     </div>
-    
+
     <div class="mySlides">
       <div class="numbertext">4 / 33</div>
       <img src="image/galeri/lombok/10.jpg" style="width:100%">
@@ -177,17 +177,17 @@ if(!isset($_SESSION['user_id']) ){
         <div class="numbertext">5 / 33</div>
         <img src="image/galeri/lombok/1.jpg" style="width:100%">
       </div>
-  
+
       <div class="mySlides">
         <div class="numbertext">6 / 33</div>
         <img src="image/galeri/lombok/2.jpg" style="width:100%">
       </div>
-  
+
       <div class="mySlides">
         <div class="numbertext">7 / 33</div>
         <img src="image/galeri/lombok/7.jpg" style="width:100%">
       </div>
-      
+
       <div class="mySlides">
         <div class="numbertext">8 / 33</div>
         <img src="image/galeri/lombok/9.jpg" style="width:100%">
@@ -196,12 +196,12 @@ if(!isset($_SESSION['user_id']) ){
           <div class="numbertext">9 / 33</div>
           <img src="image/galeri/lombok/6.jpg" style="width:100%">
         </div>
-    
+
         <div class="mySlides">
           <div class="numbertext">10 / 33</div>
           <img src="image/galeri/lombok/11.jpg" style="width:100%">
         </div>
-    
+
         <div class="mySlides">
           <div class="numbertext">11 / 33</div>
           <img src="image/galeri/lombok/12.jpg" style="width:100%">
@@ -220,7 +220,7 @@ if(!isset($_SESSION['user_id']) ){
       <div class="numbertext">14 / 33</div>
       <img src="image/galeri/komodo/2.jpg" style="width:100%">
     </div>
-    
+
     <div class="mySlides">
       <div class="numbertext">15 / 33</div>
       <img src="image/galeri/komodo/3.jpg" style="width:100%">
@@ -229,17 +229,17 @@ if(!isset($_SESSION['user_id']) ){
         <div class="numbertext">16 / 33</div>
         <img src="image/galeri/komodo/4.jpg" style="width:100%">
       </div>
-  
+
       <div class="mySlides">
         <div class="numbertext">17 / 33</div>
         <img src="image/galeri/komodo/9.jpg" style="width:100%">
       </div>
-  
+
       <div class="mySlides">
         <div class="numbertext">18 / 33</div>
         <img src="image/galeri/komodo/10.jpg" style="width:100%">
       </div>
-      
+
       <div class="mySlides">
         <div class="numbertext">19 / 33</div>
         <img src="image/galeri/komodo/11.jpg" style="width:100%">
@@ -248,12 +248,12 @@ if(!isset($_SESSION['user_id']) ){
           <div class="numbertext">20 / 33</div>
           <img src="image/galeri/komodo/12.jpg" style="width:100%">
         </div>
-    
+
         <div class="mySlides">
           <div class="numbertext">21 / 33</div>
           <img src="image/galeri/komodo/13.jpg" style="width:100%">
         </div>
-    
+
         <div class="mySlides">
           <div class="numbertext">22 / 33</div>
           <img src="image/galeri/komodo/14.jpg" style="width:100%">
@@ -262,17 +262,17 @@ if(!isset($_SESSION['user_id']) ){
             <div class="numbertext">23 / 33</div>
             <img src="image/galeri/komodo/15.jpg" style="width:100%">
           </div>
-      
+
           <div class="mySlides">
             <div class="numbertext">24 / 33</div>
             <img src="image/galeri/komodo/16.jpg" style="width:100%">
           </div>
-      
+
           <div class="mySlides">
             <div class="numbertext">25 / 33</div>
             <img src="image/galeri/komodo/17.jpg" style="width:100%">
           </div>
-          
+
           <div class="mySlides">
             <div class="numbertext">26 / 33</div>
             <img src="image/galeri/komodo/18.jpg" style="width:100%">
@@ -281,17 +281,17 @@ if(!isset($_SESSION['user_id']) ){
               <div class="numbertext">27 / 33</div>
               <img src="image/galeri/komodo/19.jpg" style="width:100%">
             </div>
-        
+
             <div class="mySlides">
               <div class="numbertext">28 / 33</div>
               <img src="image/galeri/komodo/5.jpg" style="width:100%">
             </div>
-        
+
             <div class="mySlides">
               <div class="numbertext">29 / 33</div>
               <img src="image/galeri/komodo/21.jpg" style="width:100%">
             </div>
-            
+
             <div class="mySlides">
               <div class="numbertext">30 / 33</div>
               <img src="image/galeri/komodo/22.jpg" style="width:100%">
@@ -300,17 +300,17 @@ if(!isset($_SESSION['user_id']) ){
                 <div class="numbertext">31 / 33</div>
                 <img src="image/galeri/komodo/5_1.jpg" style="width:100%">
               </div>
-          
+
               <div class="mySlides">
                 <div class="numbertext">32 / 33</div>
                 <img src="image/galeri/komodo/6.jpg" style="width:100%">
               </div>
-          
+
               <div class="mySlides">
                 <div class="numbertext">33 / 33</div>
                 <img src="image/galeri/komodo/7.jpg" style="width:100%">
               </div>
-    
+
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
@@ -321,6 +321,6 @@ if(!isset($_SESSION['user_id']) ){
 </div>
 
 <script src="assets/js/galeri5.js"></script>
-    
+
 </body>
 </html>

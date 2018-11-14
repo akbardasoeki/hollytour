@@ -49,17 +49,20 @@ if( isset($_SESSION['user_id']) ){
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="index-user.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="about-user.php">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="paket.html">Packages</a>
+              <a class="nav-link" href="paket-user.php">Packages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="galeri.html">Gallery</a>
+                <a class="nav-link" href="galeri-user.php">Gallery</a>
               </li>
+						<li class="nav-item">
+								<a class="nav-link" href="profile.php">Profile</a>
+							</li>
           </ul>
             <li class="form-inline mt-2 mt-md-0">
                 <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Log Out</a>
