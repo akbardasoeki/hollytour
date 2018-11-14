@@ -125,11 +125,14 @@ if( isset($_SESSION['user_id']) ){
       </div>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationTooltip05">Phone Number</label>
-      <input type="text" class="form-control" id="validationTooltip05" placeholder="Your Phone Number" required>
-      <div class="invalid-tooltip">
-        Enter your phone number!
-      </div>
+      <label for="validationTooltip05">Guider</label>
+			<select class="custom-select">
+				<option value="0" selected disabled>Choose Tour Guider</option>
+				<option value="1">Nabella Angela (ID: C12)</option>
+				<option value="2">Miftaheinz Prasetyo (ID: B71)</option>
+				<option value="3">Yogi Prasetya (ID: A98)</option>
+				<option value="4">Akbar Kolaider (ID: D54)</option>
+			</select>
     </div>
 
     <div class="col-md-6 mb-3">
