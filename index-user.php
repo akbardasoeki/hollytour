@@ -48,7 +48,7 @@ if(!isset($_SESSION['user_id']) ){
             </li>
           </ul>
           <li class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Sign Out</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="logout.php">Sign Out</a>
           </li>
         </div>
       </nav>

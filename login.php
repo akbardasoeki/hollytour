@@ -2,13 +2,11 @@
 require 'conn.php';
 session_start();
 
-if( isset($_SESSION['user_id']) ){
-	header("Location: /");
-}
 
 if(!empty($_POST['email']) && !empty($_POST['password'])):
-	
-	$records = $conn->prepare('SELECT id,email,password FROM user WHERE email = :email');
+
+	$email = $_POST['email'];
+	$records = $conn->prepare('SELECT * FROM user WHERE email = :email');
 	$records->bindParam(':email', $_POST['email']);
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
@@ -18,18 +16,24 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
 
 		$_SESSION['user_id'] = $results['id'];
-		header("Location: index-user.php");
-
+		if ($results['role']== 'admin') {
+		 echo "<script type='text/javascript'>alert('Wellcome Admin $email');document.location='index_admin.php'</script>";
+		}
+		elseif ($results['role']=='user') {
+		 echo "<script type='text/javascript'>alert('Wellcome $email');document.location='index-user.php'</script>";
+		}
 	} else {
     echo "<script type='text/javascript'>alert('Sorry, those credentials do not match')</script>";
   }
 
 endif;
 ?>
+
+
 <!DOCTYPE html>
 <!-- saved from url=(0051)https://getbootstrap.com/docs/4.1/examples/sign-in/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -82,6 +86,6 @@ endif;
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted">© 2017-2018 HollyTour Company, Inc.</p>
     </form>
-  
+
 
 </body></html>
