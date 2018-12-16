@@ -83,28 +83,16 @@ if( isset($_SESSION['user_id']) ){
 
       <form class="needs-validation" novalidate>
   <div class="form-row">
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <label for="validationTooltip01">Recipient Name</label>
       <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
 
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <label for="validationTooltip02">Email</label>
       <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
       <div class="valid-tooltip">
         Registered!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Username</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-          Please enter registered username!
-        </div>
       </div>
     </div>
   </div>
@@ -147,7 +135,7 @@ if( isset($_SESSION['user_id']) ){
       <label for="validationTooltip06">Payment Method</label>
       <div class="custom-control custom-radio">
         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio1">Bank Central Asia (BCA)</label>
+        <label class="custom-control-label" for="customRadio1" >Bank Central Asia (BCA)</label>
       </div>
       <div class="custom-control custom-radio">
         <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
