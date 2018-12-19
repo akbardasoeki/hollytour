@@ -32,6 +32,9 @@ if(!isset($_SESSION['user_id']) ){
               <li class="nav-item">
                 <a class="nav-link" href="paket-user.php">Packages</a>
               </li>
+							<li class="nav-item">
+	              <a class="nav-link" href="term&condition-user.php">Term & Conditions</a>
+	            </li>
               <li class="nav-item active">
                 <a class="nav-link" href="galeri-user.php">Gallery <span class="sr-only">(current)</span></a>
               </li>

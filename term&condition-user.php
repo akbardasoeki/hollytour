@@ -1,3 +1,11 @@
+<?php
+require 'conn.php';
+session_start();
+
+if(!isset($_SESSION['user_id']) ){
+	header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
     <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -25,25 +33,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="index-user.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="about-user.php">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="paket.html">Packages</a>
+              <a class="nav-link" href="paket-user.php">Packages</a>
+            </li>
+						<li class="nav-item">
+              <a class="nav-link" href="term&condition-user.php">Term & Conditions</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="galeri.html">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="term&condition.html">Term & Condition</a>
-              </li>
+                <a class="nav-link" href="galeri-user.php">Gallery</a>
+            </li>
+						<div class="dropdown" id="navbarCollapse">
+  							<a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    							Account
+  							</a>
+  							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    							<a class="dropdown-item" href="profile.php">Profile</a>
+    							<a class="dropdown-item" href="booking.php">Booking</a>
+  							</div>
+						</div>
           </ul>
-            <li class="form-inline mt-2 mt-md-0">
-                <a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Sign In</a>
-            </li>
+
+          <li class="form-inline mt-2 mt-md-0">
+            <a class="btn btn-outline-success my-2 my-sm-0" href="logout.php">Sign Out</a>
+          </li>
         </div>
       </nav>
     </header>
