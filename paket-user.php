@@ -41,12 +41,21 @@ if(!isset($_SESSION['user_id']) ){
             <li class="nav-item active">
               <a class="nav-link" href="paket-user.php">Packages</a>
             </li>
+						<li class="nav-item">
+              <a class="nav-link" href="term&condition-user.php">Term & Conditions</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="galeri-user.php">Gallery</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.php">Profile</a>
-          </li>
+						<div class="dropdown" id="navbarCollapse">
+								<a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Account
+								</a>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<a class="dropdown-item" href="profile.php">Profile</a>
+									<a class="dropdown-item" href="booking.php">Booking</a>
+								</div>
+						</div>
           </ul>
           <li class="form-inline mt-2 mt-md-0">
             <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Sign Out</a>

@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-    <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="image/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="image/logo.png">
 
-        <title>HollyTour</title>
+    <title>HollyTour</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="assets/css/carousel.css" rel="stylesheet">
-        <link href="assets/css/album.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/carousel.css" rel="stylesheet">
+    <link href="assets/css/album.css" rel="stylesheet">
 
-      </head>
   </head>
-  <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,225 +29,829 @@
             <li class="nav-item">
               <a class="nav-link" href="about.html">About Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="paket.html">Packages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="galeri.html">Gallery</a>
-              </li>
-          </ul>
-            <li class="form-inline mt-2 mt-md-0">
-                <a class="btn btn-outline-success my-2 my-sm-0" href="index.html">Log Out</a>
+              <a class="nav-link" href="galeri.html">Gallery</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="term&condition.html">Term & Condition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="daftar.html">Sign Up</a>
+            </li>
+          </ul>
+          <li class="form-inline mt-2 mt-md-0">
+            <a class="btn btn-outline-success my-2 my-sm-0" href="login.html">Sign In</a>
+          </li>
         </div>
       </nav>
     </header>
-    <main role="main">
+
+    <body>
+<main role="main">
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Custom Trip Booking</h1>
+          <h1 class="jumbotron-heading">Custom Trip Page</h1>
         </div>
       </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
+    <div class="album py-5 bg-light">
+      <div class="container">
 
-      <form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Name</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
+          <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" style="height: 225px; width: 100%; display: block;" src="image/lombok.jpg" data-holder-rendered="true">
+                  <div class="card-body">
+                    <h6> TRIP TO LOMBOK</h6>
 
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Email</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
-      <div class="valid-tooltip">
-        Registered!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Username</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-          Please enter registered username!
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip03">Add Your Destination (max. 5 destination LOMBOK)</label>
-        <select class="custom-select">
-          <option selected>none</option>
-          <option value="1">Desa Sade</option>
-          <option value="2">Pantai Tanjung Aan</option>
-          <option value="3">Pantai Kuta</option>
-          <option value="4">Bukit Marese</option>
-          <option value="5">Pengrajin Tenun Sukarare</option>
-          <option value="6">Pengrajin Gerabah di Banyumulek</option>
-          <option value="7">Gili Nangu</option>
-          <option value="8">Gili Sundak</option>
-          <option value="9">Gili Kendis</option>
-          <option value="10">Gili Trawangan</option>
-          <option value="11">Gili Meno</option>
-          <option value="12">Gili Air</option>
-          <option value="13">Monkey Forest</option>
-        </select>
-        <select class="custom-select">
-          <option selected>none</option>
-          <option value="1">Desa Sade</option>
-          <option value="2">Pantai Tanjung Aan</option>
-          <option value="3">Pantai Kuta</option>
-          <option value="4">Bukit Marese</option>
-          <option value="5">Pengrajin Tenun Sukarare</option>
-          <option value="6">Pengrajin Gerabah di Banyumulek</option>
-          <option value="7">Gili Nangu</option>
-          <option value="8">Gili Sundak</option>
-          <option value="9">Gili Kendis</option>
-          <option value="10">Gili Trawangan</option>
-          <option value="11">Gili Meno</option>
-          <option value="12">Gili Air</option>
-          <option value="13">Monkey Forest</option>
-        </select>
-        <select class="custom-select">
-          <option selected>none</option>
-          <option value="1">Desa Sade</option>
-          <option value="2">Pantai Tanjung Aan</option>
-          <option value="3">Pantai Kuta</option>
-          <option value="4">Bukit Marese</option>
-          <option value="5">Pengrajin Tenun Sukarare</option>
-          <option value="6">Pengrajin Gerabah di Banyumulek</option>
-          <option value="7">Gili Nangu</option>
-          <option value="8">Gili Sundak</option>
-          <option value="9">Gili Kendis</option>
-          <option value="10">Gili Trawangan</option>
-          <option value="11">Gili Meno</option>
-          <option value="12">Gili Air</option>
-          <option value="13">Monkey Forest</option>
-        </select>
-        <select class="custom-select">
-          <option selected>none</option>
-          <option value="1">Desa Sade</option>
-          <option value="2">Pantai Tanjung Aan</option>
-          <option value="3">Pantai Kuta</option>
-          <option value="4">Bukit Marese</option>
-          <option value="5">Pengrajin Tenun Sukarare</option>
-          <option value="6">Pengrajin Gerabah di Banyumulek</option>
-          <option value="7">Gili Nangu</option>
-          <option value="8">Gili Sundak</option>
-          <option value="9">Gili Kendis</option>
-          <option value="10">Gili Trawangan</option>
-          <option value="11">Gili Meno</option>
-          <option value="12">Gili Air</option>
-          <option value="13">Monkey Forest</option>
-        </select>
-        <select class="custom-select">
-          <option selected>none</option>
-          <option value="1">Desa Sade</option>
-          <option value="2">Pantai Tanjung Aan</option>
-          <option value="3">Pantai Kuta</option>
-          <option value="4">Bukit Marese</option>
-          <option value="5">Pengrajin Tenun Sukarare</option>
-          <option value="6">Pengrajin Gerabah di Banyumulek</option>
-          <option value="7">Gili Nangu</option>
-          <option value="8">Gili Sundak</option>
-          <option value="9">Gili Kendis</option>
-          <option value="10">Gili Trawangan</option>
-          <option value="11">Gili Meno</option>
-          <option value="12">Gili Air</option>
-          <option value="13">Monkey Forest</option>
-        </select>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationTooltip04">Duration</label>
-        <select class="custom-select">
-          <option selected>Trip Duration</option>
-          <option value="1">2Day 1Night</option>
-          <option value="2">3Day 2Night</option>
-          <option value="3">4Day 3Night</option>
-          <option value="4">5Day 4Night</option>
-        </select>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-md btn-outline-primary" id="myBtn">Custom Here!!</button>
+                          <div class="modal fade" id="myModal">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="container marketing">
+                                  <div class="modal-header">
+                                    <h2 class="modal-tittle" style="text-align: center;" > <b> Custom Your Trip to Lombok </b></h2>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="row featurette">
+                                      <div class="col-md-5 order-md-2">
+                                        <label for="validationTooltip01">Name</label>
+                                        <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
+                                        <label for="validationTooltip02">Email</label>
+                                        <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
+                                        <div class="valid-tooltip">
+                                          Registered!
+                                        </div>
+                                        <p class="lead">
+                                          <label for="validationTooltip03">Destination (max.5)</label>
+                                            <select class="custom-select">
+                                              <option selected>none</option>
+                                              <option value="1">Desa Sade</option>
+                                              <option value="2">Pantai Tanjung Aan</option>
+                                              <option value="3">Pantai Kuta</option>
+                                              <option value="4">Bukit Marese</option>
+                                              <option value="5">Pengrajin Tenun Sukarare</option>
+                                              <option value="6">Pengrajin Gerabah di Banyumulek</option>
+                                              <option value="7">Gili Nangu</option>
+                                              <option value="8">Gili Sundak</option>
+                                              <option value="9">Gili Kendis</option>
+                                              <option value="10">Gili Trawangan</option>
+                                              <option value="11">Gili Meno</option>
+                                              <option value="12">Gili Air</option>
+                                              <option value="13">Monkey Forest</option>
+                                            </select>
+                                            <select class="custom-select">
+                                              <option selected>none</option>
+                                              <option value="1">Desa Sade</option>
+                                              <option value="2">Pantai Tanjung Aan</option>
+                                              <option value="3">Pantai Kuta</option>
+                                              <option value="4">Bukit Marese</option>
+                                              <option value="5">Pengrajin Tenun Sukarare</option>
+                                              <option value="6">Pengrajin Gerabah di Banyumulek</option>
+                                              <option value="7">Gili Nangu</option>
+                                              <option value="8">Gili Sundak</option>
+                                              <option value="9">Gili Kendis</option>
+                                              <option value="10">Gili Trawangan</option>
+                                              <option value="11">Gili Meno</option>
+                                              <option value="12">Gili Air</option>
+                                              <option value="13">Monkey Forest</option>
+                                            </select>
+                                            <select class="custom-select">
+                                              <option selected>none</option>
+                                              <option value="1">Desa Sade</option>
+                                              <option value="2">Pantai Tanjung Aan</option>
+                                              <option value="3">Pantai Kuta</option>
+                                              <option value="4">Bukit Marese</option>
+                                              <option value="5">Pengrajin Tenun Sukarare</option>
+                                              <option value="6">Pengrajin Gerabah di Banyumulek</option>
+                                              <option value="7">Gili Nangu</option>
+                                              <option value="8">Gili Sundak</option>
+                                              <option value="9">Gili Kendis</option>
+                                              <option value="10">Gili Trawangan</option>
+                                              <option value="11">Gili Meno</option>
+                                              <option value="12">Gili Air</option>
+                                              <option value="13">Monkey Forest</option>
+                                            </select>
+                                            <select class="custom-select">
+                                              <option selected>none</option>
+                                              <option value="1">Desa Sade</option>
+                                              <option value="2">Pantai Tanjung Aan</option>
+                                              <option value="3">Pantai Kuta</option>
+                                              <option value="4">Bukit Marese</option>
+                                              <option value="5">Pengrajin Tenun Sukarare</option>
+                                              <option value="6">Pengrajin Gerabah di Banyumulek</option>
+                                              <option value="7">Gili Nangu</option>
+                                              <option value="8">Gili Sundak</option>
+                                              <option value="9">Gili Kendis</option>
+                                              <option value="10">Gili Trawangan</option>
+                                              <option value="11">Gili Meno</option>
+                                              <option value="12">Gili Air</option>
+                                              <option value="13">Monkey Forest</option>
+                                            </select>
+                                            <select class="custom-select">
+                                              <option selected>none</option>
+                                              <option value="1">Desa Sade</option>
+                                              <option value="2">Pantai Tanjung Aan</option>
+                                              <option value="3">Pantai Kuta</option>
+                                              <option value="4">Bukit Marese</option>
+                                              <option value="5">Pengrajin Tenun Sukarare</option>
+                                              <option value="6">Pengrajin Gerabah di Banyumulek</option>
+                                              <option value="7">Gili Nangu</option>
+                                              <option value="8">Gili Sundak</option>
+                                              <option value="9">Gili Kendis</option>
+                                              <option value="10">Gili Trawangan</option>
+                                              <option value="11">Gili Meno</option>
+                                              <option value="12">Gili Air</option>
+                                              <option value="13">Monkey Forest</option>
+                                            </select>
+                                      </div>
+                                    <div class="col-md-5 order-md-3">
+                                      <label for="validationTooltip04">Duration</label>
+                                        <select class="custom-select">
+                                          <option selected>Trip Duration</option>
+                                          <option value="1">2Day 1Night</option>
+                                          <option value="2">3Day 2Night</option>
+                                          <option value="3">4Day 3Night</option>
+                                          <option value="4">5Day 4Night</option>
+                                        </select>
+                                        <label for="validationTooltip05">Flight</label>
+                                          <select class="custom-select">
+                                            <option selected>IN/EX</option>
+                                            <option value="1">INCLUDE</option>
+                                            <option value="2">EXCLUDE</option>
+                                          </select>
+                                    </div>
+                                  </div>
+                                  <div >
+                                    <h2 style="text-align:center">Payment</h2>
+                                    <p class="lead">
+                                      <label for="validationTooltip06">Booking Code</label>
+                                      <input type="text" class="form-control" id="validationTooltip06" placeholder="Your booking code" required>
+                                      <div class="invalid-tooltip">
+                                        Booking code invalid. Please enter your booking code!
+                                      </div>
+                                      <label for="validationTooltip07">Bank Account Number</label>
+                                      <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" required>
+                                      <label for="validationTooltip08">Phone Number</label>
+                                      <input type="text" class="form-control" id="validationTooltip08" placeholder="Your Phone Number" required>
+                                      <div class="invalid-tooltip">
+                                        Enter your phone number!
+                                      </div>
+                                      <label for="validationTooltip09">Payment Method</label>
+                                      <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Bank Central Asia (BCA)</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">Bank Rakyat Indonesia (BRI)</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio3">Bank Negara Indonesia (BNI)</label>
+                                      </div>
+                                      <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
+                                        </div>
+                                        <br>
+                                        <p><a class="btn btn-primary" href="payment.html" role="button">Print Payment »</a></p>
+                                  </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationTooltip05">Flight Transportation</label>
-        <select class="custom-select">
-          <option selected>IN/EX</option>
-          <option value="1">INCLUDE</option>
-          <option value="2">EXCLUDE</option>
-        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="image/1.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                  <div class="card-body">
+                      <h6>TRIP TO BALI</h6>
 
-    </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-md btn-outline-primary" id="myBtn2">Custom Here!!</button>
+                            <div class="modal fade" id="myModal2">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="container marketing">
+                                    <div class="modal-header">
+                                      <h2 class="modal-tittle" style="text-align: center;" > <b> Custom Your Trip to Lombok </b></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row featurette">
+                                        <div class="col-md-5 order-md-2">
+                                          <label for="validationTooltip01">Name</label>
+                                          <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
+                                          <label for="validationTooltip02">Email</label>
+                                          <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
+                                          <div class="valid-tooltip">
+                                            Registered!
+                                          </div>
+                                          <p class="lead">
+                                            <label for="validationTooltip03">Destination (max.5)</label>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Nusa Penida</option>
+                                                <option value="2">Nusa Ceningan</option>
+                                                <option value="3">Candi Lempuyangan</option>
+                                                <option value="4">Double Six Beach</option>
+                                                <option value="5">Kawasan Kintamani</option>
+                                                <option value="6">Kawasan Uluwatu</option>
+                                                <option value="7">Gemitir Garden</option>
+                                                <option value="8">Pantai Lovina</option>
+                                                <option value="9">Ice Cream World</option>
+                                                <option value="10">Pantai Kuta</option>
+                                                <option value="11">Pantai Sanur</option>
+                                                <option value="12">Tanah Lot</option>
+                                                <option value="13">Danau Bedugul</option>
+                                                <option value="14">Tanjung Benoa</option>
+                                                <option value="15">Ubud</option>
+                                                <option value="16">Pantai Seminyak</option>
+                                                <option value="17">Dream Land</option>
+                                                <option value="18">Pantai Legian</option>
+                                                <option value="19">Pantai Jimbaran</option>
+                                                <option value="20">Nusa Dua</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Nusa Penida</option>
+                                                <option value="2">Nusa Ceningan</option>
+                                                <option value="3">Candi Lempuyangan</option>
+                                                <option value="4">Double Six Beach</option>
+                                                <option value="5">Kawasan Kintamani</option>
+                                                <option value="6">Kawasan Uluwatu</option>
+                                                <option value="7">Gemitir Garden</option>
+                                                <option value="8">Pantai Lovina</option>
+                                                <option value="9">Ice Cream World</option>
+                                                <option value="10">Pantai Kuta</option>
+                                                <option value="11">Pantai Sanur</option>
+                                                <option value="12">Tanah Lot</option>
+                                                <option value="13">Danau Bedugul</option>
+                                                <option value="14">Tanjung Benoa</option>
+                                                <option value="15">Ubud</option>
+                                                <option value="16">Pantai Seminyak</option>
+                                                <option value="17">Dream Land</option>
+                                                <option value="18">Pantai Legian</option>
+                                                <option value="19">Pantai Jimbaran</option>
+                                                <option value="20">Nusa Dua</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Nusa Penida</option>
+                                                <option value="2">Nusa Ceningan</option>
+                                                <option value="3">Candi Lempuyangan</option>
+                                                <option value="4">Double Six Beach</option>
+                                                <option value="5">Kawasan Kintamani</option>
+                                                <option value="6">Kawasan Uluwatu</option>
+                                                <option value="7">Gemitir Garden</option>
+                                                <option value="8">Pantai Lovina</option>
+                                                <option value="9">Ice Cream World</option>
+                                                <option value="10">Pantai Kuta</option>
+                                                <option value="11">Pantai Sanur</option>
+                                                <option value="12">Tanah Lot</option>
+                                                <option value="13">Danau Bedugul</option>
+                                                <option value="14">Tanjung Benoa</option>
+                                                <option value="15">Ubud</option>
+                                                <option value="16">Pantai Seminyak</option>
+                                                <option value="17">Dream Land</option>
+                                                <option value="18">Pantai Legian</option>
+                                                <option value="19">Pantai Jimbaran</option>
+                                                <option value="20">Nusa Dua</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option value="1">Nusa Penida</option>
+                                                <option value="2">Nusa Ceningan</option>
+                                                <option value="3">Candi Lempuyangan</option>
+                                                <option value="4">Double Six Beach</option>
+                                                <option value="5">Kawasan Kintamani</option>
+                                                <option value="6">Kawasan Uluwatu</option>
+                                                <option value="7">Gemitir Garden</option>
+                                                <option value="8">Pantai Lovina</option>
+                                                <option value="9">Ice Cream World</option>
+                                                <option value="10">Pantai Kuta</option>
+                                                <option value="11">Pantai Sanur</option>
+                                                <option value="12">Tanah Lot</option>
+                                                <option value="13">Danau Bedugul</option>
+                                                <option value="14">Tanjung Benoa</option>
+                                                <option value="15">Ubud</option>
+                                                <option value="16">Pantai Seminyak</option>
+                                                <option value="17">Dream Land</option>
+                                                <option value="18">Pantai Legian</option>
+                                                <option value="19">Pantai Jimbaran</option>
+                                                <option value="20">Nusa Dua</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Nusa Penida</option>
+                                                <option value="2">Nusa Ceningan</option>
+                                                <option value="3">Candi Lempuyangan</option>
+                                                <option value="4">Double Six Beach</option>
+                                                <option value="5">Kawasan Kintamani</option>
+                                                <option value="6">Kawasan Uluwatu</option>
+                                                <option value="7">Gemitir Garden</option>
+                                                <option value="8">Pantai Lovina</option>
+                                                <option value="9">Ice Cream World</option>
+                                                <option value="10">Pantai Kuta</option>
+                                                <option value="11">Pantai Sanur</option>
+                                                <option value="12">Tanah Lot</option>
+                                                <option value="13">Danau Bedugul</option>
+                                                <option value="14">Tanjung Benoa</option>
+                                                <option value="15">Ubud</option>
+                                                <option value="16">Pantai Seminyak</option>
+                                                <option value="17">Dream Land</option>
+                                                <option value="18">Pantai Legian</option>
+                                                <option value="19">Pantai Jimbaran</option>
+                                                <option value="20">Nusa Dua</option>
+                                              </select>
+                                        </div>
+                                      <div class="col-md-5 order-md-3">
+                                        <label for="validationTooltip04">Duration</label>
+                                          <select class="custom-select">
+                                            <option selected>Trip Duration</option>
+                                            <option value="1">2Day 1Night</option>
+                                            <option value="2">3Day 2Night</option>
+                                            <option value="3">4Day 3Night</option>
+                                            <option value="4">5Day 4Night</option>
+                                          </select>
+                                          <label for="validationTooltip05">Flight</label>
+                                            <select class="custom-select">
+                                              <option selected>IN/EX</option>
+                                              <option value="1">INCLUDE</option>
+                                              <option value="2">EXCLUDE</option>
+                                            </select>
+                                      </div>
+                                    </div>
+                                    <div >
+                                      <h2 style="text-align:center">Payment</h2>
+                                      <p class="lead">
+                                        <label for="validationTooltip06">Booking Code</label>
+                                        <input type="text" class="form-control" id="validationTooltip06" placeholder="Your booking code" required>
+                                        <div class="invalid-tooltip">
+                                          Booking code invalid. Please enter your booking code!
+                                        </div>
+                                        <label for="validationTooltip07">Bank Account Number</label>
+                                        <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" required>
+                                        <label for="validationTooltip08">Phone Number</label>
+                                        <input type="text" class="form-control" id="validationTooltip08" placeholder="Your Phone Number" required>
+                                        <div class="invalid-tooltip">
+                                          Enter your phone number!
+                                        </div>
+                                        <label for="validationTooltip09">Payment Method</label>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio1">Bank Central Asia (BCA)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio2">Bank Rakyat Indonesia (BRI)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio3">Bank Negara Indonesia (BNI)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
+                                          </div>
+                                          <br>
+                                          <p><a class="btn btn-primary" href="payment.html" role="button">Print Payment »</a></p>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip06">Booking Code</label>
-      <input type="text" class="form-control" id="validationTooltip06" placeholder="Your booking code" required>
-      <div class="invalid-tooltip">
-        Booking code invalid. Please enter your booking code!
-      </div>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip07">Bank Account Number</label>
-      <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" required>
-    </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip08">Phone Number</label>
-      <input type="text" class="form-control" id="validationTooltip08" placeholder="Your Phone Number" required>
-      <div class="invalid-tooltip">
-        Enter your phone number!
-      </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip09">Payment Method</label>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio1">Bank Central Asia (BCA)</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio2">Bank Rakyat Indonesia (BRI)</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio3">Bank Negara Indonesia (BNI)</label>
-      </div>
-      <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
-        </div>
-    </div>
-<p><a class="btn btn-primary" href="payment.html" role="button">Print Payment »</a></p>
-  </form>
-</html>
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="image/belitung.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                  <div class="card-body">
+                      <h6>TRIP TO BELITUNG</h6>
 
-<hr class="featurette-divider">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-md btn-outline-primary" id="myBtn3">Custom Here!!</button>
+                            <div class="modal fade" id="myModal3">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="container marketing">
+                                    <div class="modal-header">
+                                      <h2 class="modal-tittle" style="text-align: center;" > <b> Custom Your Trip to Lombok </b></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row featurette">
+                                        <div class="col-md-5 order-md-2">
+                                          <label for="validationTooltip01">Name</label>
+                                          <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
+                                          <label for="validationTooltip02">Email</label>
+                                          <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
+                                          <div class="valid-tooltip">
+                                            Registered!
+                                          </div>
+                                          <p class="lead">
+                                            <label for="validationTooltip03">Destination (max.5)</label>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pantai Nyiur Melambai</option>
+                                                <option value="2">Pulau Lengkuas</option>
+                                                <option value="3">Pantai Tanjung Tinggi</option>
+                                                <option value="4">Pantai Penyak</option>
+                                                <option value="5">Pantai Tanjung Kelayang</option>
+                                                <option value="6">Pantai Memperak</option>
+                                                <option value="7">Kawasan BUkit Berahu</option>
+                                                <option value="8">Pantai Punai</option>
+                                                <option value="9">Kampong Dedaun</option>
+                                                <option value="10">Tanjung Binga</option>
+                                                <option value="11">Pulau Pasir</option>
+                                                <option value="12">Pulau Batu Berlayar</option>
+                                                <option value="13">Bukit Pangkuan</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pantai Nyiur Melambai</option>
+                                                <option value="2">Pulau Lengkuas</option>
+                                                <option value="3">Pantai Tanjung Tinggi</option>
+                                                <option value="4">Pantai Penyak</option>
+                                                <option value="5">Pantai Tanjung Kelayang</option>
+                                                <option value="6">Pantai Memperak</option>
+                                                <option value="7">Kawasan BUkit Berahu</option>
+                                                <option value="8">Pantai Punai</option>
+                                                <option value="9">Kampong Dedaun</option>
+                                                <option value="10">Tanjung Binga</option>
+                                                <option value="11">Pulau Pasir</option>
+                                                <option value="12">Pulau Batu Berlayar</option>
+                                                <option value="13">Bukit Pangkuan</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pantai Nyiur Melambai</option>
+                                                <option value="2">Pulau Lengkuas</option>
+                                                <option value="3">Pantai Tanjung Tinggi</option>
+                                                <option value="4">Pantai Penyak</option>
+                                                <option value="5">Pantai Tanjung Kelayang</option>
+                                                <option value="6">Pantai Memperak</option>
+                                                <option value="7">Kawasan BUkit Berahu</option>
+                                                <option value="8">Pantai Punai</option>
+                                                <option value="9">Kampong Dedaun</option>
+                                                <option value="10">Tanjung Binga</option>
+                                                <option value="11">Pulau Pasir</option>
+                                                <option value="12">Pulau Batu Berlayar</option>
+                                                <option value="13">Bukit Pangkuan</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pantai Nyiur Melambai</option>
+                                                <option value="2">Pulau Lengkuas</option>
+                                                <option value="3">Pantai Tanjung Tinggi</option>
+                                                <option value="4">Pantai Penyak</option>
+                                                <option value="5">Pantai Tanjung Kelayang</option>
+                                                <option value="6">Pantai Memperak</option>
+                                                <option value="7">Kawasan BUkit Berahu</option>
+                                                <option value="8">Pantai Punai</option>
+                                                <option value="9">Kampong Dedaun</option>
+                                                <option value="10">Tanjung Binga</option>
+                                                <option value="11">Pulau Pasir</option>
+                                                <option value="12">Pulau Batu Berlayar</option>
+                                                <option value="13">Bukit Pangkuan</option>
+                                              </select>
+                                        </div>
+                                      <div class="col-md-5 order-md-3">
+                                        <label for="validationTooltip04">Duration</label>
+                                          <select class="custom-select">
+                                            <option selected>Trip Duration</option>
+                                            <option value="1">2Day 1Night</option>
+                                            <option value="2">3Day 2Night</option>
+                                            <option value="3">4Day 3Night</option>
+                                            <option value="4">5Day 4Night</option>
+                                          </select>
+                                          <label for="validationTooltip05">Flight</label>
+                                            <select class="custom-select">
+                                              <option selected>IN/EX</option>
+                                              <option value="1">INCLUDE</option>
+                                              <option value="2">EXCLUDE</option>
+                                            </select>
+                                      </div>
+                                    </div>
+                                    <div >
+                                      <h2 style="text-align:center">Payment</h2>
+                                      <p class="lead">
+                                        <label for="validationTooltip06">Booking Code</label>
+                                        <input type="text" class="form-control" id="validationTooltip06" placeholder="Your booking code" required>
+                                        <div class="invalid-tooltip">
+                                          Booking code invalid. Please enter your booking code!
+                                        </div>
+                                        <label for="validationTooltip07">Bank Account Number</label>
+                                        <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" required>
+                                        <label for="validationTooltip08">Phone Number</label>
+                                        <input type="text" class="form-control" id="validationTooltip08" placeholder="Your Phone Number" required>
+                                        <div class="invalid-tooltip">
+                                          Enter your phone number!
+                                        </div>
+                                        <label for="validationTooltip09">Payment Method</label>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio1">Bank Central Asia (BCA)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio2">Bank Rakyat Indonesia (BRI)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio3">Bank Negara Indonesia (BNI)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
+                                          </div>
+                                          <br>
+                                          <p><a class="btn btn-primary" href="payment.html" role="button">Print Payment »</a></p>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 
-<!-- /END THE FEATURETTES -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-</div><!-- /.container -->
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" src="image/komodo.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                  <div class="card-body">
+                      <h6>TRIP TO LABUAN BAJO</h6>
+
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-md btn-outline-primary" id="myBtn4">Custom Here!!</button>
+                            <div class="modal fade" id="myModal4">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="container marketing">
+                                    <div class="modal-header">
+                                      <h2 class="modal-tittle" style="text-align: center;" > <b> Custom Your Trip to Lombok </b></h2>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row featurette">
+                                        <div class="col-md-5 order-md-2">
+                                          <label for="validationTooltip01">Name</label>
+                                          <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
+                                          <label for="validationTooltip02">Email</label>
+                                          <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
+                                          <div class="valid-tooltip">
+                                            Registered!
+                                          </div>
+                                          <p class="lead">
+                                            <label for="validationTooltip03">Destination (max.5)</label>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pulau Komodo</option>
+                                                <option value="2">Gila Laba</option>
+                                                <option value="3">Pulau Rinca</option>
+                                                <option value="4">Air Terjun Cunca Wulang</option>
+                                                <option value="5">Pulau Kenawa</option>
+                                                <option value="6">Gua Rangko</option>
+                                                <option value="7">Pulau Padar</option>
+                                                <option value="8">Pulau Kalong</option>
+                                                <option value="9">Pulau Bidadari</option>
+                                                <option value="10">Manta Point</option>
+                                                <option value="11">Pink Beach</option>
+                                                <option value="12">Pulau Kelor</option>
+                                                <option value="13">Bukit Cinta</option>
+                                                <option value="14">Pulau Kambing</option>
+                                                <option value="15">Wae Rebo</option>
+                                                <option value="16">Sawah Lingko</option>
+                                                <option value="17">Danau Kelimutu</option>
+                                                <option value="18">Atol Mangiatan</option>
+                                                <option value="19">Taka Makassar</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pulau Komodo</option>
+                                                <option value="2">Gila Laba</option>
+                                                <option value="3">Pulau Rinca</option>
+                                                <option value="4">Air Terjun Cunca Wulang</option>
+                                                <option value="5">Pulau Kenawa</option>
+                                                <option value="6">Gua Rangko</option>
+                                                <option value="7">Pulau Padar</option>
+                                                <option value="8">Pulau Kalong</option>
+                                                <option value="9">Pulau Bidadari</option>
+                                                <option value="10">Manta Point</option>
+                                                <option value="11">Pink Beach</option>
+                                                <option value="12">Pulau Kelor</option>
+                                                <option value="13">Bukit Cinta</option>
+                                                <option value="14">Pulau Kambing</option>
+                                                <option value="15">Wae Rebo</option>
+                                                <option value="16">Sawah Lingko</option>
+                                                <option value="17">Danau Kelimutu</option>
+                                                <option value="18">Atol Mangiatan</option>
+                                                <option value="19">Taka Makassar</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pulau Komodo</option>
+                                                <option value="2">Gila Laba</option>
+                                                <option value="3">Pulau Rinca</option>
+                                                <option value="4">Air Terjun Cunca Wulang</option>
+                                                <option value="5">Pulau Kenawa</option>
+                                                <option value="6">Gua Rangko</option>
+                                                <option value="7">Pulau Padar</option>
+                                                <option value="8">Pulau Kalong</option>
+                                                <option value="9">Pulau Bidadari</option>
+                                                <option value="10">Manta Point</option>
+                                                <option value="11">Pink Beach</option>
+                                                <option value="12">Pulau Kelor</option>
+                                                <option value="13">Bukit Cinta</option>
+                                                <option value="14">Pulau Kambing</option>
+                                                <option value="15">Wae Rebo</option>
+                                                <option value="16">Sawah Lingko</option>
+                                                <option value="17">Danau Kelimutu</option>
+                                                <option value="18">Atol Mangiatan</option>
+                                                <option value="19">Taka Makassar</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pulau Komodo</option>
+                                                <option value="2">Gila Laba</option>
+                                                <option value="3">Pulau Rinca</option>
+                                                <option value="4">Air Terjun Cunca Wulang</option>
+                                                <option value="5">Pulau Kenawa</option>
+                                                <option value="6">Gua Rangko</option>
+                                                <option value="7">Pulau Padar</option>
+                                                <option value="8">Pulau Kalong</option>
+                                                <option value="9">Pulau Bidadari</option>
+                                                <option value="10">Manta Point</option>
+                                                <option value="11">Pink Beach</option>
+                                                <option value="12">Pulau Kelor</option>
+                                                <option value="13">Bukit Cinta</option>
+                                                <option value="14">Pulau Kambing</option>
+                                                <option value="15">Wae Rebo</option>
+                                                <option value="16">Sawah Lingko</option>
+                                                <option value="17">Danau Kelimutu</option>
+                                                <option value="18">Atol Mangiatan</option>
+                                                <option value="19">Taka Makassar</option>
+                                              </select>
+                                              <select class="custom-select">
+                                                <option selected>none</option>
+                                                <option value="1">Pulau Komodo</option>
+                                                <option value="2">Gila Laba</option>
+                                                <option value="3">Pulau Rinca</option>
+                                                <option value="4">Air Terjun Cunca Wulang</option>
+                                                <option value="5">Pulau Kenawa</option>
+                                                <option value="6">Gua Rangko</option>
+                                                <option value="7">Pulau Padar</option>
+                                                <option value="8">Pulau Kalong</option>
+                                                <option value="9">Pulau Bidadari</option>
+                                                <option value="10">Manta Point</option>
+                                                <option value="11">Pink Beach</option>
+                                                <option value="12">Pulau Kelor</option>
+                                                <option value="13">Bukit Cinta</option>
+                                                <option value="14">Pulau Kambing</option>
+                                                <option value="15">Wae Rebo</option>
+                                                <option value="16">Sawah Lingko</option>
+                                                <option value="17">Danau Kelimutu</option>
+                                                <option value="18">Atol Mangiatan</option>
+                                                <option value="19">Taka Makassar</option>
+                                              </select>
+                                        </div>
+                                      <div class="col-md-5 order-md-3">
+                                        <label for="validationTooltip04">Duration</label>
+                                          <select class="custom-select">
+                                            <option selected>Trip Duration</option>
+                                            <option value="1">2Day 1Night</option>
+                                            <option value="2">3Day 2Night</option>
+                                            <option value="3">4Day 3Night</option>
+                                            <option value="4">5Day 4Night</option>
+                                          </select>
+                                          <label for="validationTooltip05">Flight</label>
+                                            <select class="custom-select">
+                                              <option selected>IN/EX</option>
+                                              <option value="1">INCLUDE</option>
+                                              <option value="2">EXCLUDE</option>
+                                            </select>
+                                      </div>
+                                    </div>
+                                    <div >
+                                      <h2 style="text-align:center">Payment</h2>
+                                      <p class="lead">
+                                        <label for="validationTooltip06">Booking Code</label>
+                                        <input type="text" class="form-control" id="validationTooltip06" placeholder="Your booking code" required>
+                                        <div class="invalid-tooltip">
+                                          Booking code invalid. Please enter your booking code!
+                                        </div>
+                                        <label for="validationTooltip07">Bank Account Number</label>
+                                        <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" required>
+                                        <label for="validationTooltip08">Phone Number</label>
+                                        <input type="text" class="form-control" id="validationTooltip08" placeholder="Your Phone Number" required>
+                                        <div class="invalid-tooltip">
+                                          Enter your phone number!
+                                        </div>
+                                        <label for="validationTooltip09">Payment Method</label>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio1">Bank Central Asia (BCA)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio2">Bank Rakyat Indonesia (BRI)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                          <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                          <label class="custom-control-label" for="customRadio3">Bank Negara Indonesia (BNI)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
+                                          </div>
+                                          <br>
+                                          <p><a class="btn btn-primary" href="payment.html" role="button">Print Payment »</a></p>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src=" " data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                  <div class="card-body">
+                      <h6>Coming Soon</h6>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="buttson" href="#" class="btn btn-md btn-outline-primary">Custom</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
 
 
-<!-- FOOTER -->
-<footer class="container">
-<p>© 2017-2018 HollyTour Company, Inc.
-</footer>
-</main>
+      <!-- FOOTER -->
+      <footer class="container">
+        <p>© 2017-2018 HollyTour Company, Inc.
+      </footer>
+    </main>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="assets/js/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="assets/js/popper.min.js.download"></script>
-<script src="assets/js/bootstrap.min.js.download"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="assets/js/holder.min.js.download"></script>
+    </body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="assets/js/popper.min.js.download"></script>
+    <script src="assets/js/bootstrap.min.js.download"></script>
+    <script src="assets/js/modal.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/holder.min.js.download"></script>
 
 
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text></svg></body></html>

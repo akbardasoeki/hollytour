@@ -42,6 +42,9 @@ require 'conn.php';
               <a class="nav-link" href="galeri.html">Gallery</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="term&condition.html">Term & Condition</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="daftar.php">Sign Up</a>
             </li>
           </ul>
