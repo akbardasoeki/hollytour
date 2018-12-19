@@ -16,7 +16,17 @@ if( isset($_SESSION['user_id']) ){
 	if( count($results) > 0){
 		$user = $results;
 	}
+	if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['email'])):
 
+		// Enter the new user in the database
+		$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password)";
+		$stmt = $conn->prepare($sql);
+
+	  $stmt->bindParam(':name', $_POST['name']);
+	  $stmt->bindParam(':username', $_POST['username']);
+	  $stmt->bindParam(':no_telp', $_POST['no_telp']);
+	  $stmt->bindParam(':jns_kelamin', $_POST['jns_kelamin']);
+	  $stmt->bindParam(':email', $_POST['email']);
 
 }
 
@@ -55,7 +65,7 @@ if( isset($_SESSION['user_id']) ){
   			<li class="list-group-item">Booking Code : </li>
 			</ul>
 			<p class="card-text">*Bawalah tiket ini sebagai bukti pemesanan</p>
-	    <a href="#" class="btn btn-success" onclick="myFunction()">Cetak Bukti Pemesanan</a>
+	    <a href="#" class="btn btn-dark" onclick="myFunction()">Cetak Bukti Pemesanan</a>
 	  </div>
 	  <div class="card-footer text-muted">
 	    TRAVELLING TICKET
