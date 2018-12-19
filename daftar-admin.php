@@ -82,7 +82,7 @@ endif;
       <div class="py-5 text-center">
         <h2 style="margin-top :3%; margin-bottom: -2%">Please Sign Up</h2>
       </div>
-      <form action="daftar.php" method="POST">
+      <form action="daftar-admin.php" method="POST">
           <div class="mb-3">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required="">
