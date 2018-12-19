@@ -54,33 +54,40 @@ if( !isset($_SESSION['user_id']) ){
 </head>
 
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index-user.php">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about-user.php">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="paket-user.php">Packages</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="galeri-user.php">Gallery</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="profile.php">Profile</a>
-        </li>
-      </ul>
-      <li class="form-inline mt-2 mt-md-0">
-        <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Sign Out</a>
-      </li>
-    </div>
-  </nav>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index-user.php">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about-user.php">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="paket-user.php">Packages</a>
+				</li>
+				<li class="nav-item">
+						<a class="nav-link" href="galeri-user.php">Gallery</a>
+				</li>
+				<div class="dropdown" id="navbarCollapse">
+						<a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Account
+						</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="profile.php">Profile</a>
+							<a class="dropdown-item" href="booking.php">Booking</a>
+						</div>
+				</div>
+			</ul>
+
+			<li class="form-inline mt-2 mt-md-0">
+				<a class="btn btn-outline-success my-2 my-sm-0" href="logout.php">Sign Out</a>
+			</li>
+		</div>
+	</nav>
 </header>
 
 <body>
@@ -144,3 +151,9 @@ if( !isset($_SESSION['user_id']) ){
 </div>
 </body>
 </html>
+<script src="assets/js/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="assets/js/popper.min.js.download"></script>
+<script src="assets/js/bootstrap.min.js.download"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="assets/js/holder.min.js.download"></script>

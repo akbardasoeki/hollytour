@@ -35,9 +35,15 @@ if(!isset($_SESSION['user_id']) ){
               <li class="nav-item active">
                 <a class="nav-link" href="galeri-user.php">Gallery <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="profile.php">Profile</a>
-            </li>
+							<div class="dropdown" id="navbarCollapse">
+									<a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Account
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="profile.php">Profile</a>
+										<a class="dropdown-item" href="booking.php">Booking</a>
+									</div>
+							</div>
             </ul>
             <li class="form-inline mt-2 mt-md-0">
               <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Sign Out</a>
@@ -320,7 +326,13 @@ if(!isset($_SESSION['user_id']) ){
     </div>
   </div>
 </div>
+<script src="assets/js/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="assets/js/popper.min.js.download"></script>
+<script src="assets/js/bootstrap.min.js.download"></script>
 
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="assets/js/holder.min.js.download"></script>
 <script src="assets/js/galeri5.js"></script>
 
 </body>
