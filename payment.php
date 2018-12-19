@@ -16,17 +16,6 @@ if( isset($_SESSION['user_id']) ){
 	if( count($results) > 0){
 		$user = $results;
 	}
-	if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['email'])):
-
-		// Enter the new user in the database
-		$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password)";
-		$stmt = $conn->prepare($sql);
-
-	  $stmt->bindParam(':name', $_POST['name']);
-	  $stmt->bindParam(':username', $_POST['username']);
-	  $stmt->bindParam(':no_telp', $_POST['no_telp']);
-	  $stmt->bindParam(':jns_kelamin', $_POST['jns_kelamin']);
-	  $stmt->bindParam(':email', $_POST['email']);
 
 }
 
