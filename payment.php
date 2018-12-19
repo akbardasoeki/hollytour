@@ -57,7 +57,13 @@ if( isset($_SESSION['user_id']) ){
           $email = $result->fetch(PDO::FETCH_ASSOC);
 					echo '<li class="list-group-item" id="name" value="'.$data['id_user_fk'].'">Email : '.$email['email'].'</li>';
         ?>
-  			<li class="list-group-item" id="name" value="<?php echo $data['id_paket_fk'];  ?>">ID Paket : </li>
+  			<?php 
+					$id = $data['id_paket_fk'];
+          $query = "SELECT * FROM paket WHERE id_paket = $id";
+          $result = $conn->query($query);
+          $paket = $result->fetch(PDO::FETCH_ASSOC);
+					echo '<li class="list-group-item" id="name" value="'.$paket['id_paket_fk'].'">Packages : '.$paket['nama_paket'].'</li>';
+        ?>
   			<li class="list-group-item" id="name" value="<?php echo $data['kode_booking'];  ?>">Kode Booking : </li>
 				<li class="list-group-item" id="name" value="<?php echo $data['id_guide_fk'];  ?>">ID Guide: </li>
   			<li class="list-group-item" id="name" value="<?php echo $data['no_rekening'];  ?>">No Rekening : </li>

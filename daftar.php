@@ -10,7 +10,7 @@ require 'conn.php';
 
 $message = '';
 
-if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['role']) && !empty($_POST['email'])):
+if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['password']) && !empty($_POST['role'])):
 	
 	// Enter the new user in the database
 	$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password, role ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password, :role)";

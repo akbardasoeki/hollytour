@@ -3,33 +3,6 @@
 require 'conn.php';
 session_start();
 
-if(isset($_POST["book"])){
-    // echo @$_POST['name'];
-    // echo @$_POST['paket'];
-    // echo @$_POST['email'];
-    // echo @$_POST['kode_booking'];
-    // echo @$_POST['nama_guide'];
-    // echo @$_POST['no_rekening'];
-    // echo @$_POST['metode_bayar'];
-    
-    $sql = "INSERT INTO booking (name, email, paket, kode_booking, nama_guide, no_rekening, metode_bayar ) VALUES (:name, :email, :paket, :kode_booking, :nama_guide, :no_rekening, :metode_bayar)";
-    $stmt = $conn->prepare($sql);
-  
-    $stmt->bindParam(':name', $_POST['name']);
-    $stmt->bindParam(':email', $_POST['email']);
-    $stmt->bindParam(':paket', $_POST['paket']);
-    $stmt->bindParam(':kode_booking', $_POST['kode_booking']);
-    $stmt->bindParam(':nama_guide', $_POST['nama_guide']);
-    $stmt->bindParam(':no_rekening', $_POST['no_rekening']);
-    $stmt->bindParam(':metode_bayar', $_POST['metode_bayar']);
-  
-    if( $stmt->execute() ):
-      echo "<script type='text/javascript'>alert('Successfully Booked')</script>";
-    else:
-      echo "<script type='text/javascript'>alert('Failed to book!')</script>";
-    endif;
-}
-
 if( !isset($_SESSION['user_id']) ){
 	header("Location: login.php");
 } else {
@@ -40,9 +13,26 @@ if( !isset($_SESSION['user_id']) ){
 
   $message = '';
 
-  
-  
+  if(!empty($_POST['id_user_fk']) && !empty($_POST['email']) && !empty($_POST['id_paket_fk']) && !empty($_POST['kode_booking']) && !empty($_POST['id_guide_fk']) && !empty($_POST['no_rekening']) && !empty($_POST['metode_bayar'])):
 
+    
+    $sql = "INSERT INTO booking (id_user_fk, email, id_paket_fk, kode_booking, id_guide_fk, no_rekening, metode_bayar ) VALUES (:id_user_fk, :email, :id_paket_fk, :kode_booking, :id_guide_fk, :no_rekening, :metode_bayar)";
+    $stmt = $conn->prepare($sql);
+  
+    $stmt->bindParam(':id_user_fk', $_POST['id_user_fk']);
+    $stmt->bindParam(':email', $_POST['email']);
+    $stmt->bindParam(':id_paket_fk', $_POST['id_paket_fk']);
+    $stmt->bindParam(':kode_booking', $_POST['kode_booking']);
+    $stmt->bindParam(':id_guide_fk', $_POST['id_guide_fk']);
+    $stmt->bindParam(':no_rekening', $_POST['no_rekening']);
+    $stmt->bindParam(':metode_bayar', $_POST['metode_bayar']);
+  
+    if( $stmt->execute() ):
+      echo "<script type='text/javascript'>alert('Successfully Booked')</script>";
+    else:
+      echo "<script type='text/javascript'>alert('Failed to book!')</script>";
+    endif;
+  endif;
 
     // Enter the new user in the database
   //   $sql = "INSERT INTO booking (name, email, paket, kode_booking, nama_guide, no_rekening, metode_bayar ) VALUES (:name, :email, :paket, :kode_booking, :nama_guide, :no_rekening, :metode_bayar)";
@@ -130,21 +120,31 @@ if( !isset($_SESSION['user_id']) ){
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationTooltip01">Name</label>
-      <input type="text" class="form-control" name="name" id="validationTooltip01" value="<?php echo $data['name'];  ?>" required>
+      <?php 
+          $id= $data['id_user'];
+          $query = "SELECT * FROM user WHERE id_user_fk=$id";
+          $result = $conn->query($query);
+          $user = $result->fetch(PDO::FETCH_ASSOC);
+          echo '<input type="text" class="form-control" name="id_user_fk" value="'.$user['name'].'" readonly required="required">';
 
+        ?>
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationTooltip02">Email</label>
-      <input type="text" class="form-control" name="email" id="validationTooltip02" value="<?php echo $data['email'];  ?>" required>
-      <div class="valid-tooltip">
-        Registered!
-      </div>
+      <?php 
+          $id= $data['id_user'];
+          $query = "SELECT * FROM user WHERE id_user=$id";
+          $result = $conn->query($query);
+          $user = $result->fetch(PDO::FETCH_ASSOC);
+          echo '<input type="text" class="form-control" name="email" value="'.$user['email'].'" readonly required="required">';
+
+        ?>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationTooltip03">Packages</label>
-        <select class="custom-select" name="paket" onchange="bookChoice()">
+        <select class="custom-select" name="id_paket_fk" onchange="bookChoice()">
         <option value="0" selected disabled>Choose the package</option>
         <?php 
           $query = "SELECT * FROM paket";
@@ -165,7 +165,7 @@ if( !isset($_SESSION['user_id']) ){
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationTooltip05">Guider</label>
-			<select name="nama_guide" class="form-control custom-select">
+			<select name="id_guide_fk" class="form-control custom-select">
       <?php 
           $query = "SELECT * FROM guide";
           $result = $conn->query($query);
@@ -184,15 +184,15 @@ if( !isset($_SESSION['user_id']) ){
 
     <div class="col-md-6 mb-3">
       <label for="validationTooltip06">Payment Method</label>
-        <select class="custom-select" name="metode_bayar" onchange="bookChoice()">
-          <option value="0" selected disabled>Choose the package</option>
+        <select class="custom-select" name="metode_bayar">
+          <option value="0" selected disabled>Choose payment method</option>
           <option value="BCA">BANK CENTRAL ASIA (BCA)</option>
           <option value="BRI">BANK RAKYAT INDONESIA (BRI)</option>
           <option value="BNI">BANK NEGARA INDONESIA (BNI)</option>
           <option value="MANDIRI">BANK MANDIRI</option>
         </select>
     </div>
-    <button class="btn btn-primary btn-lg btn-block" name="book" type="submit">Book</button>
+    <button style="height : 35pt" class="btn btn-primary btn-lg btn-block" type="submit">Book</button>
   </form>
 </html>
 
