@@ -17,17 +17,50 @@ if( isset($_SESSION['user_id']) ){
 		$user = $results;
 	}
 
+
 }
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="image/logo.png">
+
+		<title>HollyTour</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="assets/css/carousel.css" rel="stylesheet">
+		<link href="assets/css/album.css" rel="stylesheet">
+
+	</head>
 <body>
 
-<p>Click the button to print the current page.</p>
-
-<button onclick="myFunction()">Print this page</button>
+	<div class="card text-center">
+	  <div class="card-header">
+	    HOLLYTOUR
+	  </div>
+	  <div class="card-body">
+			<ul class="list-group list-group-flush">
+  			<li class="list-group-item" id="name" value="<?php echo $data['name'];  ?>">Nama : </li>
+  			<li class="list-group-item">Packages : </li>
+  			<li class="list-group-item">Tour Guider : </li>
+  			<li class="list-group-item">Phone Number : </li>
+  			<li class="list-group-item">Booking Code : </li>
+			</ul>
+			<p class="card-text">*Bawalah tiket ini sebagai bukti pemesanan</p>
+	    <a href="#" class="btn btn-success" onclick="myFunction()">Cetak Bukti Pemesanan</a>
+	  </div>
+	  <div class="card-footer text-muted">
+	    TRAVELLING TICKET
+	  </div>
+	</div>
 
 <script>
 function myFunction() {
