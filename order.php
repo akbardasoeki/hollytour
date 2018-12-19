@@ -150,7 +150,7 @@ if( isset($_SESSION['user_id']) ){
           <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
         </div>
     </div>
-<p><a class="btn btn-secondary" href="payment.html" role="button">Print Payment »</a></p>
+<p><a class="btn btn-secondary" href="payment.php" role="button">Print Payment »</a></p>
   </form>
 </html>
 
