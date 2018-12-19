@@ -11,7 +11,7 @@ require 'conn.php';
 $message = '';
 
 if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['email'])):
-	
+
 	// Enter the new user in the database
 	$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password)";
 	$stmt = $conn->prepare($sql);
@@ -35,7 +35,7 @@ endif;
 ?>
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -70,6 +70,9 @@ endif;
             <li class="nav-item">
               <a class="nav-link" href="galeri.html">Gallery</a>
             </li>
+						<li class="nav-item">
+              <a class="nav-link" href="term&condition.html">Term & Condition</a>
+            </li>
             <li class="nav-item active">
               <a class="nav-link" href="daftar.php">Sign Up <span class="sr-only">(current)</span></a>
             </li>
@@ -82,7 +85,7 @@ endif;
     </header>
 
   <body class="bg-light">
-  
+
 
     <div class="container">
       <div class="py-5 text-center">
@@ -151,7 +154,7 @@ endif;
                 Password is required.
               </div>
             </div>
-            
+
 
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
@@ -192,6 +195,6 @@ endif;
         }, false);
       })();
     </script>
-  
+
 
 </body></html>
