@@ -10,10 +10,10 @@ require 'conn.php';
 
 $message = '';
 
-if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['email'])):
+if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_telp']) && !empty($_POST['jns_kelamin']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['role']) && !empty($_POST['email'])):
 	
 	// Enter the new user in the database
-	$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password)";
+	$sql = "INSERT INTO user (name, username, no_telp, jns_kelamin, email, address, password, role ) VALUES (:name, :username, :no_telp, :jns_kelamin, :email, :address, :password, :role)";
 	$stmt = $conn->prepare($sql);
 
   $stmt->bindParam(':name', $_POST['name']);
@@ -23,6 +23,7 @@ if(!empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['no_tel
   $stmt->bindParam(':email', $_POST['email']);
   $stmt->bindParam(':address', $_POST['address']);
 	$stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
+	$stmt->bindParam(':role', $_POST['role']);
 
 	if( $stmt->execute() ):
 		echo "<script type='text/javascript'>alert('Successfully created new user')</script>";
@@ -155,6 +156,11 @@ endif;
 
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
+            
+            <div class="col-md-6 mb-3">
+              <input type="hidden" class="form-control" name="role" id="role" value="user">
+              <div >
+            </div>
           </form>
         </div>
       </div>

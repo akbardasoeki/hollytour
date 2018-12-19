@@ -6,16 +6,10 @@ require 'conn.php';
 
 if( isset($_SESSION['user_id']) ){
 
-	$records = $conn->prepare('SELECT id,email,password FROM user WHERE id = :id');
+	$records = $conn->prepare('SELECT * FROM booking WHERE id_user_fk = :id');
 	$records->bindParam(':id', $_SESSION['user_id']);
 	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$user = NULL;
-
-	if( count($results) > 0){
-		$user = $results;
-	}
+	$data = $records->fetch(PDO::FETCH_ASSOC);
 
 }
 
@@ -47,11 +41,27 @@ if( isset($_SESSION['user_id']) ){
 	  </div>
 	  <div class="card-body">
 			<ul class="list-group list-group-flush">
-  			<li class="list-group-item" id="name" value="<?php echo $data['name'];  ?>">Nama : </li>
-  			<li class="list-group-item">Packages : </li>
-  			<li class="list-group-item">Tour Guider : </li>
-  			<li class="list-group-item">Phone Number : </li>
-  			<li class="list-group-item">Booking Code : </li>
+  			<!-- <li class="list-group-item" id="name" value="">ID Booking : <?php echo $data['id_booking'];  ?></li> -->
+  			<!-- <li class="list-group-item" id="name" value="<?php echo $data['id_user_fk'];  ?>">ID User : </li> -->
+				<?php 
+					$id = $data['id_user_fk'];
+          $query = "SELECT * FROM user WHERE id_user = $id";
+          $result = $conn->query($query);
+          $user = $result->fetch(PDO::FETCH_ASSOC);
+					echo '<li class="list-group-item" id="name" value="'.$data['id_user_fk'].'">Name User : '.$user['name'].'</li>';
+        ?>
+				<?php 
+					$id = $data['id_user_fk'];
+          $query = "SELECT * FROM user WHERE id_user = $id";
+          $result = $conn->query($query);
+          $email = $result->fetch(PDO::FETCH_ASSOC);
+					echo '<li class="list-group-item" id="name" value="'.$data['id_user_fk'].'">Email : '.$email['email'].'</li>';
+        ?>
+  			<li class="list-group-item" id="name" value="<?php echo $data['id_paket_fk'];  ?>">ID Paket : </li>
+  			<li class="list-group-item" id="name" value="<?php echo $data['kode_booking'];  ?>">Kode Booking : </li>
+				<li class="list-group-item" id="name" value="<?php echo $data['id_guide_fk'];  ?>">ID Guide: </li>
+  			<li class="list-group-item" id="name" value="<?php echo $data['no_rekening'];  ?>">No Rekening : </li>
+  			<li class="list-group-item" id="name" value="<?php echo $data['metode_bayar'];  ?>">Metode Bayar : </li>
 			</ul>
 			<p class="card-text">*Bawalah tiket ini sebagai bukti pemesanan</p>
 	    <a href="#" class="btn btn-dark" onclick="myFunction()">Cetak Bukti Pemesanan</a>

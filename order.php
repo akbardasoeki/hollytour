@@ -1,23 +1,68 @@
 <?php
 
+require 'conn.php';
 session_start();
 
-require 'conn.php';
-
-if( isset($_SESSION['user_id']) ){
-
-	$records = $conn->prepare('SELECT id,email,password FROM user WHERE id = :id');
-	$records->bindParam(':id', $_SESSION['user_id']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$user = NULL;
-
-	if( count($results) > 0){
-		$user = $results;
-	}
-
+if(isset($_POST["book"])){
+    // echo @$_POST['name'];
+    // echo @$_POST['paket'];
+    // echo @$_POST['email'];
+    // echo @$_POST['kode_booking'];
+    // echo @$_POST['nama_guide'];
+    // echo @$_POST['no_rekening'];
+    // echo @$_POST['metode_bayar'];
+    
+    $sql = "INSERT INTO booking (name, email, paket, kode_booking, nama_guide, no_rekening, metode_bayar ) VALUES (:name, :email, :paket, :kode_booking, :nama_guide, :no_rekening, :metode_bayar)";
+    $stmt = $conn->prepare($sql);
+  
+    $stmt->bindParam(':name', $_POST['name']);
+    $stmt->bindParam(':email', $_POST['email']);
+    $stmt->bindParam(':paket', $_POST['paket']);
+    $stmt->bindParam(':kode_booking', $_POST['kode_booking']);
+    $stmt->bindParam(':nama_guide', $_POST['nama_guide']);
+    $stmt->bindParam(':no_rekening', $_POST['no_rekening']);
+    $stmt->bindParam(':metode_bayar', $_POST['metode_bayar']);
+  
+    if( $stmt->execute() ):
+      echo "<script type='text/javascript'>alert('Successfully Booked')</script>";
+    else:
+      echo "<script type='text/javascript'>alert('Failed to book!')</script>";
+    endif;
 }
+
+if( !isset($_SESSION['user_id']) ){
+	header("Location: login.php");
+} else {
+  $query = "SELECT * FROM user where id_user='{$_SESSION['user_id']}'";
+  $result = $conn->query($query);
+  $data = $result->fetch(PDO::FETCH_ASSOC);
+  }
+
+  $message = '';
+
+  
+  
+
+
+    // Enter the new user in the database
+  //   $sql = "INSERT INTO booking (name, email, paket, kode_booking, nama_guide, no_rekening, metode_bayar ) VALUES (:name, :email, :paket, :kode_booking, :nama_guide, :no_rekening, :metode_bayar)";
+  //   $stmt = $conn->prepare($sql);
+  
+  //   $stmt->bindParam(':name', $_POST['name']);
+  //   $stmt->bindParam(':email', $_POST['email']);
+  //   $stmt->bindParam(':paket', $_POST['paket']);
+  //   $stmt->bindParam(':kode_booking', $_POST['kode_booking']);
+  //   $stmt->bindParam(':nama_guide', $_POST['nama_guide']);
+  //   $stmt->bindParam(':no_rekening', $_POST['no_rekening']);
+  //   $stmt->bindParam(':metode_bayar', $_POST['metode_bayar']);
+  
+  //   if( $stmt->execute() ):
+  //     echo "<script type='text/javascript'>alert('Successfully Booked')</script>";
+  //   else:
+  //     echo "<script type='text/javascript'>alert('Failed to book!')</script>";
+  //   endif;
+  
+  // endif;
 
 ?>
 
@@ -80,17 +125,17 @@ if( isset($_SESSION['user_id']) ){
 
       <div class="album py-5 bg-light">
         <div class="container">
-
-      <form class="needs-validation" novalidate>
+<!-- <form class="needs-validation" novalidate> -->
+<form action="" method="POST">
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationTooltip01">Recipient Name</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Your Name" required>
+      <label for="validationTooltip01">Name</label>
+      <input type="text" class="form-control" name="name" id="validationTooltip01" value="<?php echo $data['name'];  ?>" required>
 
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationTooltip02">Email</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Your Email" required>
+      <input type="text" class="form-control" name="email" id="validationTooltip02" value="<?php echo $data['email'];  ?>" required>
       <div class="valid-tooltip">
         Registered!
       </div>
@@ -99,58 +144,55 @@ if( isset($_SESSION['user_id']) ){
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationTooltip03">Packages</label>
-        <select class="custom-select" onchange="bookChoice()">
-          <option value="0" selected disabled>Choose the package</option>
-          <option value="1">TRIP 3DAY-2NIGHT LOMBOK</option>
-          <option value="2">TRIP 4DAY-3NIGHT LOMBOK & FLIGHT ROUND-TRIP</option>
-          <option value="3">TRIP 4DAY-3NIGHT LOMBOK</option>
-          <option value="4">TRIP 3DAY-2NIGHT BELITUNG</option>
-          <option value="5">TRIP 3DAY-2NIGHT SAILING KOMODO</option>
+        <select class="custom-select" name="paket" onchange="bookChoice()">
+        <option value="0" selected disabled>Choose the package</option>
+        <?php 
+          $query = "SELECT * FROM paket";
+          $result = $conn->query($query);
+          while($paket = $result->fetch(PDO::FETCH_ASSOC) ){
+            echo '<option value="'.$paket['id_paket'].'">'.$paket['nama_paket'].'</option>';
+         }
+
+        ?>
         </select>
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationTooltip04">Booking Code</label>
-      <input type="text" class="form-control" id="validationTooltip04" placeholder="Your booking code" required disabled>
+      <input type="text" class="form-control" id="validationTooltip04" placeholder="Your booking code"  name="kode_booking" required>
       <div class="invalid-tooltip">
         Booking code invalid. Please enter your booking code!
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationTooltip05">Guider</label>
-			<select class="custom-select">
-				<option value="0" selected disabled>Choose Tour Guider</option>
-				<option value="1">Nabella Angela (ID: C12)</option>
-				<option value="2">Miftaheinz Prasetyo (ID: B71)</option>
-				<option value="3">Yogi Prasetya (ID: A98)</option>
-				<option value="4">Akbar Kolaider (ID: D54)</option>
+			<select name="nama_guide" class="form-control custom-select">
+      <?php 
+          $query = "SELECT * FROM guide";
+          $result = $conn->query($query);
+          while($guide = $result->fetch(PDO::FETCH_ASSOC) ){
+            echo '<option value="'.$guide['id_guide'].'">'.$guide['nama_guide'].'</option>';
+         }
+
+        ?>
 			</select>
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="validationTooltip07">Bank Account Number</label>
-      <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" required>
+      <input type="text" class="form-control" id="validationTooltip07" placeholder="Enter Your Bank Account Number" name="no_rekening" required>
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="validationTooltip06">Payment Method</label>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio1" >Bank Central Asia (BCA)</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio2">Bank Rakyat Indonesia (BRI)</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio3">Bank Negara Indonesia (BNI)</label>
-      </div>
-      <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio4">Bank Mandiri</label>
-        </div>
+        <select class="custom-select" name="metode_bayar" onchange="bookChoice()">
+          <option value="0" selected disabled>Choose the package</option>
+          <option value="BCA">BANK CENTRAL ASIA (BCA)</option>
+          <option value="BRI">BANK RAKYAT INDONESIA (BRI)</option>
+          <option value="BNI">BANK NEGARA INDONESIA (BNI)</option>
+          <option value="MANDIRI">BANK MANDIRI</option>
+        </select>
     </div>
-<p><a class="btn btn-secondary" href="payment.php" role="button">Print Payment »</a></p>
+    <button class="btn btn-primary btn-lg btn-block" name="book" type="submit">Book</button>
   </form>
 </html>
 

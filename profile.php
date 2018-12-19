@@ -6,7 +6,7 @@ session_start();
 if( !isset($_SESSION['user_id']) ){
 	header("Location: login.php");
 } else {
-  $query = "SELECT * FROM user where id='{$_SESSION['user_id']}'";
+  $query = "SELECT * FROM user where id_user='{$_SESSION['user_id']}'";
   $result = $conn->query($query);
   $data = $result->fetch(PDO::FETCH_ASSOC);
   }
@@ -19,14 +19,14 @@ if( !isset($_SESSION['user_id']) ){
     $email = $_POST['email'];
     $address = $_POST['address'];
 
-    $query = "UPDATE user set name='{$name}', username='{$username}', no_telp='{$no_telp}', jns_kelamin='{$jns_kelamin}', email='{$email}', address='{$address}' WHERE id='{$_SESSION['user_id']}'";
+    $query = "UPDATE user set name='{$name}', username='{$username}', no_telp='{$no_telp}', jns_kelamin='{$jns_kelamin}', email='{$email}', address='{$address}' WHERE id_user='{$_SESSION['user_id']}'";
     $result = $conn->prepare($query);
     if($result->execute()){
       echo "<script>alert('Update Berhasil')</script>";
     } else {
       echo "<script>alert('gagal')</script>";
     }
-    $query = "SELECT * FROM user where id='{$_SESSION['user_id']}'";
+    $query = "SELECT * FROM user where id_user='{$_SESSION['user_id']}'";
     $result = $conn->query($query);
     $data = $result->fetch(PDO::FETCH_ASSOC);
   }

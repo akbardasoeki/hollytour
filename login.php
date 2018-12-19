@@ -15,12 +15,12 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 
 	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
 
-		$_SESSION['user_id'] = $results['id'];
+		$_SESSION['user_id'] = $results['id_user'];
 		if ($results['role']== 'admin') {
-		 echo "<script type='text/javascript'>alert('Wellcome Admin $email');document.location='index_admin.php'</script>";
+		 echo "<script type='text/javascript'>alert('Welcome Admin $email');document.location='index-admin.php'</script>";
 		}
 		elseif ($results['role']=='user') {
-		 echo "<script type='text/javascript'>alert('Wellcome $email');document.location='index-user.php'</script>";
+		 echo "<script type='text/javascript'>alert('Welcome $email');document.location='index-user.php'</script>";
 		}
 	} else {
     echo "<script type='text/javascript'>alert('Sorry, those credentials do not match')</script>";
