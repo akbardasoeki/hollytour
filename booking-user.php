@@ -7,38 +7,79 @@ session_start();
 if( !isset($_SESSION['user_id']) ){
 	header("Location: login.php");
 } else {
-  $query = "SELECT * FROM user where id_user='{$_SESSION['user_id']}'";
+  $id = $_SESSION['user_id'];
+  // echo $id;
+  $query = "SELECT * FROM user where id_user=$id";
   $result = $conn->query($query);
   $data = $result->fetch(PDO::FETCH_ASSOC);
   }
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Guide</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- load css boostrap -->
-    <link href="assets/css/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="assets/css/galeri5.css" rel="stylesheet">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="image/logo.png">
 
-  <body>
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="admin-guide.php">Guide</a></li>
-      <li><a href="admin-pelanggan.php">Customer</a></li>
-      <li><a href="admin-order.php">Booking</a></li>
-      <li><a href="index-admin.php">Home</a></li>
-    </ul>
-    <li><a style="float:right; display:block; padding:14px; background:#337ab7; color:white" href="logout.php">Logout</a></li>
-  </div>
-</nav>
+<title>HollyTour</title>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index-user.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-user.php">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="paket-user.php">Packages</a>
+              </li>
+							<li class="nav-item">
+	              <a class="nav-link" href="term&condition-user.php">Term & Conditions</a>
+	            </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="galeri-user.php">Gallery <span class="sr-only">(current)</span></a>
+              </li>
+							<div class="dropdown" id="navbarCollapse">
+									<a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Account
+									</a>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="profile.php">Profile</a>
+										<a class="dropdown-item" href="booking-user.php">Booking</a>
+									</div>
+							</div>
+            </ul>
+            <li class="form-inline mt-2 mt-md-0">
+              <a class="btn btn-outline-success my-2 my-sm-0" href="index.php">Sign Out</a>
+            </li>
+          </div>
+        </nav>
+      </header>
 
-          <h2 style="margin: 30px 0 30px 0;">Booking List</h2>
+
+
+      <?php 
+            //mengecek apakah proses update dan delete sukses/gagal
+            if (@$_GET['status']!==NULL) {
+              $status = $_GET['status'];
+              if ($status=='ok') {
+                echo '<br><br><div class="alert alert-success" role="alert">Booking successfully canceled!</div>';
+              }
+              elseif($status=='err'){
+                echo '<br><br><div class="alert alert-danger" role="alert">Failed to cancel booking</div>';
+              }
+
+            }
+           ?>
+
+          <h2 style="margin: 60px 0 30px 0;">Booking List</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -55,7 +96,7 @@ if( !isset($_SESSION['user_id']) ){
                 <?php 
                   //proses menampilkan data dari database dengan PDO:
                   //siapkan query SQL
-                  $query = "SELECT * FROM booking";
+                  $query = "SELECT * FROM booking WHERE id_user_fk =$id";
                   //eksekusi query
                   $result = $conn->query($query);
 
@@ -86,6 +127,7 @@ if( !isset($_SESSION['user_id']) ){
                     <td>
                       <a href="<?php echo "payment.php?id_booking=".$data['id_booking']; ?>" class="btn btn-outline-warning btn-sm">Print Payment</a>
                       &nbsp;&nbsp;
+                      <a href="<?php echo "cancel-order.php?id_booking=".$data['id_booking']; ?>" class="btn btn-outline-danger btn-sm">Cancel Book</a>
                     </td>
                   </tr>
                  <?php endwhile ?>

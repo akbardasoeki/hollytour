@@ -81,7 +81,7 @@ if( !isset($_SESSION['user_id']) ){
 						</a>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="profile.php">Profile</a>
-							<a class="dropdown-item" href="booking.php">Booking</a>
+							<a class="dropdown-item" href="booking-user.php">Booking</a>
 						</div>
 				</div>
 			</ul>

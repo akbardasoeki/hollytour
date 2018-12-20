@@ -11,6 +11,26 @@ if( isset($_SESSION['user_id']) ){
 	$records->execute();
 	$data = $records->fetch(PDO::FETCH_ASSOC);
 
+	$records = $conn->prepare('SELECT * FROM paket WHERE id_paket = :id_paket');
+	$records->bindParam(':id_paket', $_SESSION['user_id']);
+	$records->execute();
+	$paket = $records->fetch(PDO::FETCH_ASSOC);
+
+	$records = $conn->prepare('SELECT * FROM booking WHERE id_user_fk = :id_booking');
+	$records->bindParam(':id_booking', $_SESSION['user_id']);
+	$records->execute();
+	$booking = $records->fetch(PDO::FETCH_ASSOC);
+
+	$records = $conn->prepare('SELECT * FROM guide WHERE id_guide = :id_booking');
+	$records->bindParam(':id_booking', $_SESSION['user_id']);
+	$records->execute();
+	$guide = $records->fetch(PDO::FETCH_ASSOC);
+
+	$records = $conn->prepare('SELECT * FROM booking WHERE id_user_fk = :id_booking');
+	$records->bindParam(':id_booking', $_SESSION['user_id']);
+	$records->execute();
+	$guide = $records->fetch(PDO::FETCH_ASSOC);
+
 }
 
 ?>
@@ -62,12 +82,18 @@ if( isset($_SESSION['user_id']) ){
           $query = "SELECT * FROM paket WHERE id_paket = $id";
           $result = $conn->query($query);
           $paket = $result->fetch(PDO::FETCH_ASSOC);
-					echo '<li class="list-group-item" id="name" value="'.$paket['id_paket_fk'].'">Packages : '.$paket['nama_paket'].'</li>';
+					echo '<li class="list-group-item" id="name" value="'.$paket['id_paket'].'">Packages : '.$paket['nama_paket'].'</li>';
         ?>
-  			<li class="list-group-item" id="name" value="<?php echo $data['kode_booking'];  ?>">Kode Booking : </li>
-				<li class="list-group-item" id="name" value="<?php echo $data['id_guide_fk'];  ?>">ID Guide: </li>
-  			<li class="list-group-item" id="name" value="<?php echo $data['no_rekening'];  ?>">No Rekening : </li>
-  			<li class="list-group-item" id="name" value="<?php echo $data['metode_bayar'];  ?>">Metode Bayar : </li>
+  			<li class="list-group-item" id="name" value="">Kode Booking : <?php echo $booking['kode_booking'];  ?></li>
+				<?php 
+					$id = $data['id_guide_fk'];
+          $query = "SELECT * FROM guide WHERE id_guide = $id";
+          $result = $conn->query($query);
+          $guide = $result->fetch(PDO::FETCH_ASSOC);
+					echo '<li class="list-group-item" id="name" value="'.$guide['id_guide'].'">Guide Name : '.$guide['nama_guide'].'</li>';
+        ?>
+  			<li class="list-group-item" id="name" value="">Bank Number : <?php echo $booking['no_rekening'];  ?></li>
+  			<li class="list-group-item" id="name" value="">Payment Method : <?php echo $booking['metode_bayar'];  ?></li>
 			</ul>
 			<p class="card-text">*Bawalah tiket ini sebagai bukti pemesanan</p>
 	    <a href="#" class="btn btn-dark" onclick="myFunction()">Cetak Bukti Pemesanan</a>

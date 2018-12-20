@@ -16,10 +16,10 @@
           $query->execute(); 
       }  
   }
-
+  
   //melakukan pengecekan apakah ada form yang dipost
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $id_booking = $_POST['id_booking'];
+      $id_booking = $_GET['id_booking'];
       $id_user_fk = $_POST['id_user_fk'];
       $email = $_POST['email'];
       $id_paket_fk = $_POST['id_paket_fk'];
@@ -27,12 +27,20 @@
       $id_guide_fk = $_POST['id_guide_fk'];
       $no_rekening = $_POST['no_rekening'];
       $metode_bayar = $_POST['metode_bayar'];
-
+      
+      // echo $id_booking.'-';
+      // echo $id_user_fk.'-';
+      // echo $email.'-';
+      // echo $id_paket_fk.'-'; 
+      // echo $kode_booking.'-';
+      // echo $id_guide_fk.'-';
+      // echo $no_rekening.'-';
+      // echo $metode_bayar.'-';
       //query SQL
-      $query = $conn->prepare("UPDATE booking SET id_user_fk=:id_user_fk, email=:email, id_paket_fk=:id_paket_fk, kode_booking=:kode_booking, id_guide_fk=:id_guide_fk, no_rekening=:no_rekening, metode_bayar=:metode_bayar WHERE id_booking=:id_booking"); 
+      $query = $conn->prepare("UPDATE booking SET id_user_fk=:id_user_fk, email=:email, id_paket_fk=:id_paket_fk, kode_booking=:kode_booking, id_guide_fk=:id_guide_fk, no_rekening=:no_rekening, metode_bayar=:metode_bayar WHERE id_booking=$id_booking"); 
 
       //binding data
-      $query->bindParam(':id_booking',$id_booking);
+      // $query->bindParam(':id_booking',$id_booking);
       $query->bindParam(':id_user_fk',$id_user_fk);
       $query->bindParam(':email',$email);
       $query->bindParam(':id_paket_fk',$id_paket_fk);
@@ -102,17 +110,17 @@
           
 
           <h2 style="margin: 30px 0 30px 0;">Update Booking</h2>
-          <form action="admin-update-order.php" method="POST">
+          <form action="?id_booking=<?php echo @$_GET['id_booking']; ?>" method="POST">
           <?php while($data = $query->fetch(PDO::FETCH_ASSOC)):?>
             <div class="form-group">
               <label>Name</label>
               <?php 
                   $id= $data['id_user_fk'];
-                  $query = "SELECT * FROM user WHERE id_user=$id";
-                  $result = $conn->query($query);
+                  $querya = "SELECT * FROM user WHERE id_user=$id";
+                  $result = $conn->query($querya);
                   $user = $result->fetch(PDO::FETCH_ASSOC);
-                  echo '<input type="text" class="form-control" placeholder="email" name="id_user_fk" value="'.$user['name'].'" required="required">';
-
+                  echo '<input type="text" class="form-control" placeholder="email" name="" value="'.$user['name'].'" required="required">';
+                  echo '<input type="hidden" class="form-control" placeholder="email" name="id_user_fk" value="'.$user['id_user'].'" required="required">';
                 ?>
             </div>
             <div class="form-group">
@@ -124,8 +132,8 @@
               <select class="form-control custom-select" name="id_paket_fk" onchange="bookChoice()">
                 <!-- <option value="0" disabled>Choose the package</option> -->
                 <?php 
-                  $query = "SELECT * FROM paket";
-                  $result = $conn->query($query);
+                  $queryb = "SELECT * FROM paket";
+                  $result = $conn->query($queryb);
                   while($paket = $result->fetch(PDO::FETCH_ASSOC) ){
                     $a = $data['id_paket_fk'];
                     $b = $paket['id_paket'];
@@ -149,8 +157,8 @@
               <select class="form-control custom-select" name="id_guide_fk" onchange="bookChoice()">
                 <!-- <option value="0" disabled>Choose the package</option> -->
                 <?php 
-                  $query = "SELECT * FROM guide";
-                  $result = $conn->query($query);
+                  $queryc = "SELECT * FROM guide";
+                  $result = $conn->query($queryc);
                   while($guide = $result->fetch(PDO::FETCH_ASSOC) ){
                     $a = $data['id_guide_fk'];
                     $b = $guide['id_guide'];
@@ -179,7 +187,7 @@
               </select>
             </div>
             <?php endwhile; ?>
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" name="update" class="btn btn-primary">Simpan</button>
           </form>
         </main>
       </div>

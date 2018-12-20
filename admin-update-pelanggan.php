@@ -19,7 +19,7 @@
 
   //melakukan pengecekan apakah ada form yang dipost
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $id_user = $_POST['id_user'];
+      $id_user = $_GET['id_user'];
       $name = $_POST['name'];
       $username = $_POST['username'];
       $no_telp = $_POST['no_telp'];
@@ -27,11 +27,21 @@
       $email = $_POST['email'];
       $address = $_POST['address'];
       $role = $_POST['role'];
+
+      echo $id_user.' ';
+      echo $name.' ';
+      echo $username.' ';
+      echo $no_telp.' ';
+      echo $jns_kelamin.' ';
+      echo $email.' ';
+      echo $address.' ';
+      // echo $role;
+      
       //query SQL
-      $query = $conn->prepare("UPDATE user SET name=:name, username=:username, no_telp=:no_telp, jns_kelamin=:jns_kelamin, email=email, address=:address, role=:role WHERE id_user=:id_user"); 
+      $query = $conn->prepare("UPDATE user SET name=:name, username=:username, no_telp=:no_telp, jns_kelamin=:jns_kelamin, email=email, role=:role, address=:address WHERE id_user=$id_user"); 
 
       //binding data
-      $query->bindParam(':id_user',$id_user);
+      // $query->bindParam(':id_user',$id_user);
       $query->bindParam(':name',$name);
       $query->bindParam(':username',$username);
       $query->bindParam(':no_telp',$no_telp);
@@ -101,7 +111,7 @@
           
 
           <h2 style="margin: 30px 0 30px 0;">Update Customer</h2>
-          <form action="admin-update-pelanggan.php" method="POST">
+          <form action="?id_user=<?php echo @$_GET['id_user']; ?>" method="POST">
             <?php while($data = $query->fetch(PDO::FETCH_ASSOC)): ?>
             <div class="form-group">
               <!-- <label>ID Guide</label> -->
@@ -123,7 +133,6 @@
               <label>Gender</label>
               <select class="form-control custom-select" name="jns_kelamin" required="required">
                 <option value="">Choose one</option>
-                
                 <option value="Male" <?php if($data['jns_kelamin'] == "Male"){ echo "selected"; } ?>>Male</option>
                 <option value="Female" <?php if($data['jns_kelamin'] == "Female"){ echo "selected"; } ?>>Female</option>
               </select>
