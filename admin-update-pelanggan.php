@@ -35,23 +35,23 @@
       echo $jns_kelamin.' ';
       echo $email.' ';
       echo $address.' ';
-      // echo $role;
+      echo $role;
       
       //query SQL
-      $query = $conn->prepare("UPDATE user SET name=:name, username=:username, no_telp=:no_telp, jns_kelamin=:jns_kelamin, email=email, role=:role, address=:address WHERE id_user=$id_user"); 
+      $queryne = $conn->prepare("UPDATE user SET name=:name, username=:username, no_telp=:no_telp, jns_kelamin=:jns_kelamin, email=:email, role=:role, address=:address WHERE id_user=$id_user"); 
 
       //binding data
       // $query->bindParam(':id_user',$id_user);
-      $query->bindParam(':name',$name);
-      $query->bindParam(':username',$username);
-      $query->bindParam(':no_telp',$no_telp);
-      $query->bindParam(':jns_kelamin',$jns_kelamin);
-      $query->bindParam(':email',$email);
-      $query->bindParam(':address',$address);
-      $query->bindParam(':role',$role);
+      $queryne->bindParam(':name',$name);
+      $queryne->bindParam(':username',$username);
+      $queryne->bindParam(':no_telp',$no_telp);
+      $queryne->bindParam(':jns_kelamin',$jns_kelamin);
+      $queryne->bindParam(':email',$email);
+      $queryne->bindParam(':address',$address);
+      $queryne->bindParam(':role',$role);
 
       //eksekusi query
-      if ($query->execute()) {
+      if ($queryne->execute()) {
         $status = 'ok';
       }
       else{
@@ -84,8 +84,8 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li><a href="admin-guide.php">Guide</a></li>
-      <li class="active"><a href="admin-pelanggan.php">Customer</a></li>
       <li><a href="admin-order.php">Booking</a></li>
+      <li class="active"><a href="admin-pelanggan.php">Customer</a></li>
       <li><a href="index-admin.php">Home</a></li>
     </ul>
        <li><a style="float:right; display:block; padding:14px; background:#337ab7; color:white" href="logout.php">Logout</a></li>
@@ -154,7 +154,7 @@
               </select>
             </div>
             <?php endwhile; ?>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" name="update" class="btn btn-primary">Save</button>
           </form>
         </main>
       </div>

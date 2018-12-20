@@ -21,8 +21,8 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li><a href="admin-guide.php">Guide</a></li>
-      <li><a href="admin-pelanggan.php">Customer</a></li>
       <li class="active"><a href="admin-order.php">Booking</a></li>
+      <li><a href="admin-pelanggan.php">Customer</a></li>
       <li><a href="index-admin.php">Home</a></li>
     </ul>
     <li><a style="float:right; display:block; padding:14px; background:#337ab7; color:white" href="logout.php">Logout</a></li>
